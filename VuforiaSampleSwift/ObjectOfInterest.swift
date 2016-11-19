@@ -29,6 +29,10 @@ class ObjectOfIntereset: SCNNode {
     return zoneMaterial
   }
   
+  var circleBorder = SCNNode()
+  
+  var circle = SCNNode()
+  
   init(vec: SCNVector3, scale: Float, pointName: String) {
     super.init()
     
@@ -38,7 +42,7 @@ class ObjectOfIntereset: SCNNode {
     self.position = vec
     self.rotation = SCNVector4Make(50/scale, 0, 0, 100)
     
-    let circleBorder = SCNNode()
+    
     circleBorder.name = pointName
     circleBorder.geometry = SCNTorus(ringRadius:  CGFloat(Float(10.0) / scale),
                                      pipeRadius:  CGFloat(Float(0.1) / scale))
@@ -47,7 +51,6 @@ class ObjectOfIntereset: SCNNode {
     circleBorder.rotation = SCNVector4Make(50/scale, 0, 0, 100)
     self.addChildNode(circleBorder)
     
-    let circle = SCNNode()
     circle.name = pointName
     circle.geometry = SCNCylinder(radius: CGFloat(Float(10.0) / scale),
                                   height: 2 * CGFloat(Float(0.1) / scale))

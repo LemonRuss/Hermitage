@@ -20,6 +20,7 @@
 		6B60CE271DE05B7C0093F5FD /* Pitcur.dat in Resources */ = {isa = PBXBuildFile; fileRef = 6B60CE251DE05B7C0093F5FD /* Pitcur.dat */; };
 		6B60CE281DE05B7C0093F5FD /* Pitcur.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6B60CE261DE05B7C0093F5FD /* Pitcur.xml */; };
 		6B60CE2A1DE083AE0093F5FD /* ObjectOfInterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B60CE291DE083AE0093F5FD /* ObjectOfInterest.swift */; };
+		6B60CE2C1DE093720093F5FD /* AmericanGothic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B60CE2B1DE093720093F5FD /* AmericanGothic.swift */; };
 		926096D41D4163B600510C24 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 926096D31D4163B600510C24 /* SpriteKit.framework */; };
 		927B76D71D27FDC600C4F5CC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 927B76D41D27FDC600C4F5CC /* AVFoundation.framework */; };
 		927B76D81D27FDC600C4F5CC /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 927B76D51D27FDC600C4F5CC /* CoreMotion.framework */; };
@@ -150,6 +151,7 @@
 		6B60CE251DE05B7C0093F5FD /* Pitcur.dat */ = {isa = PBXFileReference; lastKnownFileType = file; name = Pitcur.dat; path = VuforiaSampleSwift/VuforiaAssets/ImageTargets/Pitcur.dat; sourceTree = "<group>"; };
 		6B60CE261DE05B7C0093F5FD /* Pitcur.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Pitcur.xml; path = VuforiaSampleSwift/VuforiaAssets/ImageTargets/Pitcur.xml; sourceTree = "<group>"; };
 		6B60CE291DE083AE0093F5FD /* ObjectOfInterest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectOfInterest.swift; sourceTree = "<group>"; };
+		6B60CE2B1DE093720093F5FD /* AmericanGothic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmericanGothic.swift; sourceTree = "<group>"; };
 		926096D31D4163B600510C24 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		927B76D31D27FDC600C4F5CC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		927B76D41D27FDC600C4F5CC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -391,6 +393,7 @@
 				92AA110A1D27A5EB00E56CBE /* ViewController.swift */,
 				144AD9001DE06967002B6F51 /* PictureCardViewController.swift */,
 				6B60CE291DE083AE0093F5FD /* ObjectOfInterest.swift */,
+				6B60CE2B1DE093720093F5FD /* AmericanGothic.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -654,6 +657,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				144AD9011DE06967002B6F51 /* PictureCardViewController.swift in Sources */,
+				6B60CE2C1DE093720093F5FD /* AmericanGothic.swift in Sources */,
 				927B76EA1D2806EF00C4F5CC /* VuforiaEAGLView.mm in Sources */,
 				927B76FD1D2816DB00C4F5CC /* VuforiaShaderUtils.m in Sources */,
 				92AA110B1D27A5EB00E56CBE /* ViewController.swift in Sources */,

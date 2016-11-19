@@ -24,6 +24,7 @@
 		144AD9101DE0897B002B6F51 /* AnnotationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD90F1DE0897B002B6F51 /* AnnotationProtocol.swift */; };
 		6B60CE271DE05B7C0093F5FD /* Pitcur.dat in Resources */ = {isa = PBXBuildFile; fileRef = 6B60CE251DE05B7C0093F5FD /* Pitcur.dat */; };
 		6B60CE281DE05B7C0093F5FD /* Pitcur.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6B60CE261DE05B7C0093F5FD /* Pitcur.xml */; };
+		6B60CE2A1DE083AE0093F5FD /* ObjectOfInterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B60CE291DE083AE0093F5FD /* ObjectOfInterest.swift */; };
 		926096D41D4163B600510C24 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 926096D31D4163B600510C24 /* SpriteKit.framework */; };
 		927B76D71D27FDC600C4F5CC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 927B76D41D27FDC600C4F5CC /* AVFoundation.framework */; };
 		927B76D81D27FDC600C4F5CC /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 927B76D51D27FDC600C4F5CC /* CoreMotion.framework */; };
@@ -158,6 +159,7 @@
 		6B60CD531DE054780093F5FD /* libVuforia.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libVuforia.a; path = "VuforiaSampleSwift/vuforia-sdk-ios-6-1-17/build/lib/arm/libVuforia.a"; sourceTree = "<group>"; };
 		6B60CE251DE05B7C0093F5FD /* Pitcur.dat */ = {isa = PBXFileReference; lastKnownFileType = file; name = Pitcur.dat; path = VuforiaSampleSwift/VuforiaAssets/ImageTargets/Pitcur.dat; sourceTree = "<group>"; };
 		6B60CE261DE05B7C0093F5FD /* Pitcur.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Pitcur.xml; path = VuforiaSampleSwift/VuforiaAssets/ImageTargets/Pitcur.xml; sourceTree = "<group>"; };
+		6B60CE291DE083AE0093F5FD /* ObjectOfInterest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectOfInterest.swift; sourceTree = "<group>"; };
 		926096D31D4163B600510C24 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		927B76D31D27FDC600C4F5CC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		927B76D41D27FDC600C4F5CC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -399,6 +401,7 @@
 				92AA11081D27A5EB00E56CBE /* AppDelegate.swift */,
 				92AA110A1D27A5EB00E56CBE /* ViewController.swift */,
 				144AD9001DE06967002B6F51 /* PictureCardViewController.swift */,
+				6B60CE291DE083AE0093F5FD /* ObjectOfInterest.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -579,7 +582,7 @@
 				TargetAttributes = {
 					92AA11041D27A5EB00E56CBE = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = V9XXJGN69B;
+						DevelopmentTeam = Z626L65G9N;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -696,6 +699,7 @@
 				144AD9041DE06A78002B6F51 /* UIViewController+Helpers.swift in Sources */,
 				144AD9091DE07803002B6F51 /* PhotoCell.swift in Sources */,
 				927B76EC1D2806EF00C4F5CC /* VuforiaObjects.mm in Sources */,
+				6B60CE2A1DE083AE0093F5FD /* ObjectOfInterest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -818,7 +822,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = V9XXJGN69B;
+				DEVELOPMENT_TEAM = Z626L65G9N;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/VuforiaSampleSwift/vuforia-sdk-ios-6-1-17/build/include\"";
 				INFOPLIST_FILE = VuforiaSampleSwift/Info.plist;
@@ -843,7 +847,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = V9XXJGN69B;
+				DEVELOPMENT_TEAM = Z626L65G9N;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/VuforiaSampleSwift/vuforia-sdk-ios-6-1-17/build/include\"";
 				INFOPLIST_FILE = VuforiaSampleSwift/Info.plist;

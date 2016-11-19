@@ -117,28 +117,28 @@ extension ViewController: VuforiaManagerDelegate {
     for index in 0 ..< state.numberOfTrackableResults {
       let result = state.trackableResult(at: index)
       let trackerableName = result?.trackable.name
-      if trackerableName == "Gothic" {
-        manager.eaglView.setNeedsChangeSceneWithUserInfo(["scene" : "Gothic"])
+      //      if trackerableName == "Gothic" {
+      //        manager.eaglView.setNeedsChangeSceneWithUserInfo(["scene" : "Gothic"])
+      //        if lastSceneName != "Gothic" {
+      //          //        boxMaterial.diffuse.contents = UIColor.red
+      //          lastSceneName = "Gothic"
+      //        }
+      //      }
+      if trackerableName == "stones" {
+        boxMaterial.diffuse.contents = UIColor.red
+        
+        if lastSceneName != "stones" {
+          manager.eaglView.setNeedsChangeSceneWithUserInfo(["scene" : "stones"])
+          lastSceneName = "stones"
+        }
+      } else {
+//        boxMaterial.diffuse.contents = UIColor.white
+        
         if lastSceneName != "Gothic" {
-          //        boxMaterial.diffuse.contents = UIColor.red
+          manager.eaglView.setNeedsChangeSceneWithUserInfo(["scene" : "Gothic"])
           lastSceneName = "Gothic"
         }
       }
-      //      if trackerableName == "stones" {
-      //        boxMaterial.diffuse.contents = UIColor.red
-      //
-      //        if lastSceneName != "stones" {
-      //          manager.eaglView.setNeedsChangeSceneWithUserInfo(["scene" : "stones"])
-      //          lastSceneName = "stones"
-      //        }
-      //      } else {
-      //        boxMaterial.diffuse.contents = UIColor.blue
-      //
-      //        if lastSceneName != "chips" {
-      //          manager.eaglView.setNeedsChangeSceneWithUserInfo(["scene" : "chips"])
-      //          lastSceneName = "chips"
-      //        }
-      //      }
       
     }
   }
@@ -157,7 +157,7 @@ extension ViewController: VuforiaEAGLViewSceneSource, VuforiaEAGLViewDelegate {
     switch info {
     case "Gothic":
       print("AmericanGothic scene")
-      return createChipsScene(with: view)
+      return createAmericanGothic(with: view)
     default:
       return SCNScene()
     }
@@ -165,25 +165,72 @@ extension ViewController: VuforiaEAGLViewSceneSource, VuforiaEAGLViewDelegate {
   
   fileprivate func createAmericanGothic(with view: VuforiaEAGLView) -> SCNScene {
     let scene = SCNScene()
-    boxMaterial.diffuse.contents = UIColor.lightGray
+    boxMaterial.diffuse.contents = UIColor.white
+    boxMaterial.diffuse.borderColor = UIColor.white
+    boxMaterial.transparency = 0.5
+    
+    
+    let viewScale = Float(view.objectScale)
     
     let planeNode = SCNNode()
     planeNode.name = "plane"
-    planeNode.geometry = SCNPlane(width: 247.0/view.objectScale, height: 173.0/view.objectScale)
+    planeNode.geometry = SCNPlane(width: 300.0/view.objectScale, height: 355.0/view.objectScale)
     planeNode.position = SCNVector3Make(0, 0, -1)
     let planeMaterial = SCNMaterial()
-    planeMaterial.diffuse.contents = UIColor.red
+    planeMaterial.diffuse.contents = UIColor.clear
     planeMaterial.transparency = 0.6
     planeNode.geometry?.firstMaterial = planeMaterial
     scene.rootNode.addChildNode(planeNode)
     
-    let boxNode = SCNNode()
-    boxNode.name = "box"
-    boxNode.geometry = SCNBox(width:1, height:1, length:1, chamferRadius:0.0)
-    boxNode.geometry?.firstMaterial = boxMaterial
-    boxNode.position = SCNVector3Make(0, 0, 0)
-    scene.rootNode.addChildNode(boxNode)
     
+    let firstPoint = ObjectOfIntereset(vec: SCNVector3Make(65/viewScale, 0, 0),
+                                       scale: viewScale, pointName: "point 1")
+    scene.rootNode.addChildNode(firstPoint)
+    
+    let secondPoint = ObjectOfIntereset(vec: SCNVector3Make(-57.5 / viewScale, -35 / viewScale, 0),
+                                        scale: viewScale, pointName: "point 2")
+    scene.rootNode.addChildNode(secondPoint)
+    
+    let thirdPoint = ObjectOfIntereset(vec: SCNVector3Make(10/viewScale, -110/viewScale, 0),
+                                        scale: viewScale, pointName: "point 3")
+    scene.rootNode.addChildNode(thirdPoint)
+    
+    let fourthPoint = ObjectOfIntereset(vec: SCNVector3Make(10/viewScale, -65/viewScale, 0),
+                                       scale: viewScale, pointName: "point 4")
+    scene.rootNode.addChildNode(fourthPoint)
+    
+    let fithPoint = ObjectOfIntereset(vec: SCNVector3Make(70/viewScale, 80/viewScale, 0),
+                                        scale: viewScale, pointName: "point 5")
+    scene.rootNode.addChildNode(fithPoint)
+    
+    let sixPoint = ObjectOfIntereset(vec: SCNVector3Make(-72.5/viewScale, -75/viewScale, 0),
+                                      scale: viewScale, pointName: "point 6")
+    scene.rootNode.addChildNode(sixPoint)
+    
+    let seventhPoint = ObjectOfIntereset(vec: SCNVector3Make(-70/viewScale, -0.55, 0),
+                                     scale: viewScale, pointName: "point 7")
+    scene.rootNode.addChildNode(seventhPoint)
+    
+    let eightPoint = ObjectOfIntereset(vec: SCNVector3Make(-92.5 / viewScale, 22.5 / viewScale, 0),
+                                         scale: viewScale, pointName: "point 8")
+    scene.rootNode.addChildNode(eightPoint)
+    
+    let ninthPoint = ObjectOfIntereset(vec: SCNVector3Make(5/viewScale, 80/viewScale, 0),
+                                       scale: viewScale, pointName: "point 9")
+    scene.rootNode.addChildNode(ninthPoint)
+
+
+    let tenthPoint = ObjectOfIntereset(vec: SCNVector3Make(-125/viewScale, -10/viewScale, 0),
+                                       scale: viewScale, pointName: "point 10")
+    scene.rootNode.addChildNode(tenthPoint)
+    
+    let eleventhPointPoint = ObjectOfIntereset(vec: SCNVector3Make(-115/viewScale, 100/viewScale, 0),
+                                       scale: viewScale, pointName: "point 11")
+    scene.rootNode.addChildNode(eleventhPointPoint)
+    
+    let twelthPointPoint = ObjectOfIntereset(vec: SCNVector3Make(120/viewScale, 35/viewScale, 0),
+                                               scale: viewScale, pointName: "point 12")
+    scene.rootNode.addChildNode(twelthPointPoint)
     return scene
   }
   
@@ -217,7 +264,7 @@ extension ViewController: VuforiaEAGLViewSceneSource, VuforiaEAGLViewDelegate {
     
     let boxNode = SCNNode()
     boxNode.name = "box"
-    boxNode.geometry = SCNBox(width:1, height:1, length:1, chamferRadius:0.0)
+    boxNode.geometry = SCNBox(width: 1, height: 1, length: 1, chamferRadius:0.0)
     boxNode.geometry?.firstMaterial = boxMaterial
     boxNode.position = SCNVector3Make(0, 0, 0)
     
@@ -226,58 +273,19 @@ extension ViewController: VuforiaEAGLViewSceneSource, VuforiaEAGLViewDelegate {
     return scene
   }
   
-  fileprivate func createChipsScene(with view: VuforiaEAGLView) -> SCNScene {
-    let scene = SCNScene()
-    
-    boxMaterial.diffuse.contents = UIColor.lightGray
-    
-    let lightNode = SCNNode()
-    lightNode.light = SCNLight()
-    lightNode.light?.type = .omni
-    lightNode.light?.color = UIColor.lightGray
-    lightNode.position = SCNVector3(x:0, y:10, z:10)
-    scene.rootNode.addChildNode(lightNode)
-    
-    let ambientLightNode = SCNNode()
-    ambientLightNode.light = SCNLight()
-    ambientLightNode.light?.type = .ambient
-    ambientLightNode.light?.color = UIColor.darkGray
-    scene.rootNode.addChildNode(ambientLightNode)
-    
-    let planeNode = SCNNode()
-    planeNode.name = "plane"
-    planeNode.geometry = SCNPlane(width: 300.0/view.objectScale, height: 355.0/view.objectScale)
-    planeNode.position = SCNVector3Make(0, 0, -1)
-    
-    let planeMaterial = SCNMaterial()
-    planeMaterial.diffuse.contents = UIColor.red
-    planeMaterial.transparency = 0.6
-    planeNode.geometry?.firstMaterial = planeMaterial
-    scene.rootNode.addChildNode(planeNode)
-    
-    let boxNode = SCNNode()
-    boxNode.name = "box"
-    boxNode.geometry = SCNCylinder(radius: 1, height: 1)
-    boxNode.geometry?.firstMaterial = boxMaterial
-    boxNode.position = SCNVector3Make(20, -5, 0)
-    scene.rootNode.addChildNode(boxNode)
-    
-    return scene
-  }
-  
   func vuforiaEAGLView(_ view: VuforiaEAGLView!, didTouchDownNode node: SCNNode!) {
     print("touch down \(node.name)\n")
-    boxMaterial.transparency = 0.6
+//    boxMaterial.transparency = 0.6
   }
   
   func vuforiaEAGLView(_ view: VuforiaEAGLView!, didTouchUp node: SCNNode!) {
     print("touch up \(node.name)\n")
-    boxMaterial.transparency = 1.0
+    boxMaterial.transparency = 0.5
   }
   
   func vuforiaEAGLView(_ view: VuforiaEAGLView!, didTouchCancel node: SCNNode!) {
     print("touch cancel \(node.name)\n")
-    boxMaterial.transparency = 1.0
+    boxMaterial.transparency = 0.5
   }
 }
 

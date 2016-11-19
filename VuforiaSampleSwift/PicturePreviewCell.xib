@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PicturePreviewCell" rowHeight="150" id="KGk-i7-Jjw" customClass="PicturePreviewCell" customModule="VuforiaSampleSwift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="611" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="611" height="149.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjU-5g-edM">
+                        <rect key="frame" x="0.0" y="0.0" width="611" height="150"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p1" translatesAutoresizingMaskIntoConstraints="NO" id="cU5-K5-Kzk">
+                                <rect key="frame" x="10" y="10" width="120" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="A7L-vJ-euU"/>
+                                    <constraint firstAttribute="width" constant="120" id="ON8-r5-rX4"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaM-l0-505">
+                                <rect key="frame" x="10.5" y="118" width="120" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="1oR-t0-R04"/>
+                                </constraints>
+                                <string key="text">Звёздная ночь
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p2" translatesAutoresizingMaskIntoConstraints="NO" id="AUG-p3-ixl">
+                                <rect key="frame" x="138" y="10" width="120" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="7BV-tb-BTC"/>
+                                    <constraint firstAttribute="width" constant="120" id="U0l-vE-3di"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p3" translatesAutoresizingMaskIntoConstraints="NO" id="T0o-y7-RHy">
+                                <rect key="frame" x="266" y="10" width="120" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="5Wc-gi-XaH"/>
+                                    <constraint firstAttribute="height" constant="100" id="emo-uf-7zb"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Американская готика" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLp-gx-eOR">
+                                <rect key="frame" x="266.5" y="118" width="120" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="bHk-Yg-cBI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p4" translatesAutoresizingMaskIntoConstraints="NO" id="BxV-TP-gSS">
+                                <rect key="frame" x="394" y="10" width="120" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="TYq-hS-iEm"/>
+                                    <constraint firstAttribute="height" constant="100" id="ye1-89-kxI"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мадо́нна Ли́тта" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egA-hD-joW">
+                                <rect key="frame" x="394" y="118" width="120" height="14.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="kBP-BE-frr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Явление Христа народу" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMP-Bo-kUR">
+                                <rect key="frame" x="138" y="118" width="120" height="14.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="rnT-lO-DVA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="BMP-Bo-kUR" firstAttribute="centerX" secondItem="AUG-p3-ixl" secondAttribute="centerX" id="4YW-OV-oEh"/>
+                            <constraint firstItem="KLp-gx-eOR" firstAttribute="top" secondItem="T0o-y7-RHy" secondAttribute="bottom" constant="8" id="6ee-Io-WuE"/>
+                            <constraint firstItem="KLp-gx-eOR" firstAttribute="centerX" secondItem="T0o-y7-RHy" secondAttribute="centerX" id="7A9-tO-xkb"/>
+                            <constraint firstItem="egA-hD-joW" firstAttribute="top" secondItem="BxV-TP-gSS" secondAttribute="bottom" constant="8" id="9sZ-D9-BvB"/>
+                            <constraint firstItem="KaM-l0-505" firstAttribute="top" secondItem="cU5-K5-Kzk" secondAttribute="bottom" constant="8" id="Fof-VY-hlK"/>
+                            <constraint firstItem="AUG-p3-ixl" firstAttribute="leading" secondItem="cU5-K5-Kzk" secondAttribute="trailing" constant="8" id="ISg-G2-xnO"/>
+                            <constraint firstItem="BxV-TP-gSS" firstAttribute="top" secondItem="FjU-5g-edM" secondAttribute="top" constant="10" id="KXc-X8-jY6"/>
+                            <constraint firstItem="cU5-K5-Kzk" firstAttribute="leading" secondItem="FjU-5g-edM" secondAttribute="leading" constant="10" id="Ka0-Y4-26f"/>
+                            <constraint firstItem="BMP-Bo-kUR" firstAttribute="top" secondItem="AUG-p3-ixl" secondAttribute="bottom" constant="8" id="c75-7X-Vck"/>
+                            <constraint firstAttribute="trailing" secondItem="BxV-TP-gSS" secondAttribute="trailing" constant="10" id="gNZ-4U-iZQ"/>
+                            <constraint firstItem="cU5-K5-Kzk" firstAttribute="top" secondItem="FjU-5g-edM" secondAttribute="top" constant="10" id="gdu-Fi-vWc"/>
+                            <constraint firstItem="AUG-p3-ixl" firstAttribute="top" secondItem="FjU-5g-edM" secondAttribute="top" constant="10" id="hmw-Kv-RNr"/>
+                            <constraint firstItem="BxV-TP-gSS" firstAttribute="leading" secondItem="T0o-y7-RHy" secondAttribute="trailing" constant="8" id="hzH-O3-Y8A"/>
+                            <constraint firstItem="T0o-y7-RHy" firstAttribute="top" secondItem="FjU-5g-edM" secondAttribute="top" constant="10" id="oli-9o-SAr"/>
+                            <constraint firstItem="egA-hD-joW" firstAttribute="centerX" secondItem="BxV-TP-gSS" secondAttribute="centerX" id="sP1-h6-Lpx"/>
+                            <constraint firstItem="KaM-l0-505" firstAttribute="centerX" secondItem="cU5-K5-Kzk" secondAttribute="centerX" id="spH-vO-ctD"/>
+                            <constraint firstItem="T0o-y7-RHy" firstAttribute="leading" secondItem="AUG-p3-ixl" secondAttribute="trailing" constant="8" id="tRL-vu-eZs"/>
+                            <constraint firstAttribute="height" constant="150" id="uOa-dR-RT0"/>
+                            <constraint firstAttribute="bottom" secondItem="KaM-l0-505" secondAttribute="bottom" constant="10" id="wcO-qP-2OH"/>
+                        </constraints>
+                    </scrollView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="FjU-5g-edM" secondAttribute="trailing" id="Yde-Wz-iUB"/>
+                    <constraint firstAttribute="bottom" secondItem="FjU-5g-edM" secondAttribute="bottom" id="Za8-OE-Vff"/>
+                    <constraint firstItem="FjU-5g-edM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="eql-dS-qFb"/>
+                    <constraint firstItem="FjU-5g-edM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="yWF-nc-6l4"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="179.5" y="120"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="p1" width="345" height="273"/>
+        <image name="p2" width="350" height="244"/>
+        <image name="p3" width="852" height="1024"/>
+        <image name="p4" width="350" height="447"/>
+    </resources>
+</document>

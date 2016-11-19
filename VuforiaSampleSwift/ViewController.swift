@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ViewController: UIViewController {
   
@@ -168,7 +169,7 @@ extension ViewController: VuforiaEAGLViewSceneSource, VuforiaEAGLViewDelegate {
   func scene(for view: VuforiaEAGLView!, userInfo: [String : Any]?) -> SCNScene! {
     guard let userInfo = userInfo else {
       print("default scene")
-      return createDefaultScene(with: view)
+      return SCNScene()
     }
     guard let info = userInfo["scene"] as? String else {
       return SCNScene()
@@ -382,6 +383,9 @@ extension ViewController: VuforiaEAGLViewSceneSource, VuforiaEAGLViewDelegate {
   
   func vuforiaEAGLView(_ view: VuforiaEAGLView!, didTouchDownNode node: SCNNode!) {
     print("touch down \(node.name)\n")
+    lastSceneName = ""
+    
+    pause()
     if let zoneNode = node as? ObjectOfIntereset {
       let vc = UIStoryboard(name: "Main", bundle: nil)
         .instantiateViewController(withIdentifier: "PictureCardViewController") as! PictureCardViewController

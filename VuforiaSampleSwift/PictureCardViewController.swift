@@ -35,6 +35,7 @@ class PictureCardViewController: UIViewController {
       show(picture: picture)
     }
   }
+  
   func show(picture: Picture) {
     var rows = [Row]()
     rows.append(TableRow<PhotoCell>(item: picture))
@@ -44,8 +45,28 @@ class PictureCardViewController: UIViewController {
     } else {
       rows.append(TableRow<AnnotationCell>(item: picture))
     }
+    rows.append(TableRow<PicturePreviewCell>(item: picture))
+    rows.append(TableRow<AuthorPreviewCell>(item: picture))
+    rows.append(TableRow<SocialPreviewCell>(item: picture))
     
     tableDirector.append(section: TableSection(rows: rows)).reload()
+  }
+  
+  @IBAction func exitPressed(_ sender: UIButton) {
+    dismiss(animated: true, completion: nil)
+  }
+  
+  @IBAction func addToCollectionPressed(_ sender: UIButton) {
+    guard let picture = picture else {
+      return
+    }
+    
+    picture.isCollection = true
+    
+    let realm = try! Realm()
+    try! realm.write {
+      realm.add(picture,update: true)
+    }
   }
   
 }

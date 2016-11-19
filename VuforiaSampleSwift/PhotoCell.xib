@@ -28,12 +28,12 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="01" translatesAutoresizingMaskIntoConstraints="NO" id="8Ex-d8-TaY">
-                                    <rect key="frame" x="-266" y="65" width="852" height="116"/>
+                                    <rect key="frame" x="40" y="-377" width="240" height="1000"/>
                                 </imageView>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="8Ex-d8-TaY" firstAttribute="top" secondItem="eO8-0U-nMO" secondAttribute="top" constant="65" id="3AP-5X-LLi"/>
                                 <constraint firstItem="8Ex-d8-TaY" firstAttribute="centerY" secondItem="eO8-0U-nMO" secondAttribute="centerY" id="CHk-4X-RQp"/>
+                                <constraint firstItem="8Ex-d8-TaY" firstAttribute="leading" secondItem="eO8-0U-nMO" secondAttribute="leading" constant="40" id="Ipe-G4-7HX"/>
                                 <constraint firstItem="8Ex-d8-TaY" firstAttribute="centerX" secondItem="eO8-0U-nMO" secondAttribute="centerX" id="qXj-Uy-TSZ"/>
                             </constraints>
                         </view>
@@ -59,6 +59,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="01" width="852" height="1024"/>
+        <image name="01" width="1200" height="1000"/>
     </resources>
 </document>

@@ -182,104 +182,55 @@ extension ViewController: VuforiaEAGLViewSceneSource, VuforiaEAGLViewDelegate {
     planeNode.geometry?.firstMaterial = planeMaterial
     scene.rootNode.addChildNode(planeNode)
     
-    let firstPoint = SCNNode()
-    firstPoint.name = "point 1"
-    firstPoint.geometry = SCNTorus(ringRadius:  10/view.objectScale, pipeRadius:  1/view.objectScale)
-//      SCNCylinder(radius: 10/view.objectScale, height: 0.1)
-    firstPoint.geometry?.firstMaterial = boxMaterial
-    firstPoint.position = SCNVector3Make(65/viewScale, 0, 0)
-    firstPoint.rotation = SCNVector4Make(50/viewScale, 0, 0, 90)
+    
+    let firstPoint = ObjectOfIntereset(vec: SCNVector3Make(65/viewScale, 0, 0),
+                                       scale: viewScale, pointName: "point 1")
     scene.rootNode.addChildNode(firstPoint)
     
-    let secondPoint = SCNNode()
-    secondPoint.name = "point 7"
-    secondPoint.geometry = SCNCylinder(radius: 10/view.objectScale, height: 0.1)
-    secondPoint.geometry?.firstMaterial = boxMaterial
-    secondPoint.position = SCNVector3Make(-70/viewScale, -0.55, 0)
-    secondPoint.rotation = SCNVector4Make(50/viewScale, 0, 0, 90)
+    let secondPoint = ObjectOfIntereset(vec: SCNVector3Make(-57.5 / viewScale, -35 / viewScale, 0),
+                                        scale: viewScale, pointName: "point 2")
     scene.rootNode.addChildNode(secondPoint)
     
-    let thirdPoint = SCNNode()
-    thirdPoint.name = "point 6"
-    thirdPoint.geometry = SCNCylinder(radius: 10/view.objectScale, height: 0.1)
-    thirdPoint.geometry?.firstMaterial = boxMaterial
-    thirdPoint.position = SCNVector3Make(-72.5/viewScale, -75/viewScale, 0)
-    thirdPoint.rotation = SCNVector4Make(50/viewScale, 0, 0, 90)
+    let thirdPoint = ObjectOfIntereset(vec: SCNVector3Make(10/viewScale, -110/viewScale, 0),
+                                        scale: viewScale, pointName: "point 3")
     scene.rootNode.addChildNode(thirdPoint)
     
-    let fourthPoint = SCNNode()
-    fourthPoint.name = "point 10"
-    fourthPoint.geometry = SCNCylinder(radius: 10/view.objectScale, height: 0.1)
-    fourthPoint.geometry?.firstMaterial = boxMaterial
-    fourthPoint.position = SCNVector3Make(-125/viewScale, -10/viewScale, 0)
-    fourthPoint.rotation = SCNVector4Make(1, 0, 0, 90)
+    let fourthPoint = ObjectOfIntereset(vec: SCNVector3Make(10/viewScale, -65/viewScale, 0),
+                                       scale: viewScale, pointName: "point 4")
     scene.rootNode.addChildNode(fourthPoint)
     
-    let fithPoint = SCNNode()
-    fithPoint.name = "point 8"
-    fithPoint.geometry = SCNCylinder(radius: 10/view.objectScale, height: 0.1)
-    fithPoint.geometry?.firstMaterial = boxMaterial
-    fithPoint.position = SCNVector3Make(-92.5 / viewScale,
-                                        22.5 / viewScale, 0)
-    fithPoint.rotation = SCNVector4Make(1, 0, 0, 90)
+    let fithPoint = ObjectOfIntereset(vec: SCNVector3Make(70/viewScale, 80/viewScale, 0),
+                                        scale: viewScale, pointName: "point 5")
     scene.rootNode.addChildNode(fithPoint)
     
-    let sixPoint = SCNNode()
-    sixPoint.name = "point 2"
-    sixPoint.geometry = SCNCylinder(radius: 10/view.objectScale, height: 0.1)
-    sixPoint.geometry?.firstMaterial = boxMaterial
-    sixPoint.position = SCNVector3Make(-57.5 / viewScale, -35 / viewScale, 0)
-    sixPoint.rotation = SCNVector4Make(1, 0, 0, 90)
+    let sixPoint = ObjectOfIntereset(vec: SCNVector3Make(-72.5/viewScale, -75/viewScale, 0),
+                                      scale: viewScale, pointName: "point 6")
     scene.rootNode.addChildNode(sixPoint)
     
-    let seventPoint = SCNNode()
-    seventPoint.name = "point 11"
-    seventPoint.geometry = SCNCylinder(radius: 10/view.objectScale, height: 0.1)
-    seventPoint.geometry?.firstMaterial = boxMaterial
-    seventPoint.position = SCNVector3Make(-115/viewScale, 100/viewScale, 0)
-    seventPoint.rotation = SCNVector4Make(1, 0, 0, 90)
-    scene.rootNode.addChildNode(seventPoint)
+    let seventhPoint = ObjectOfIntereset(vec: SCNVector3Make(-70/viewScale, -0.55, 0),
+                                     scale: viewScale, pointName: "point 7")
+    scene.rootNode.addChildNode(seventhPoint)
     
-    let eightyPoint = SCNNode()
-    eightyPoint.name = "point 9"
-    eightyPoint.geometry = SCNCylinder(radius: 10/view.objectScale, height: 0.1)
-    eightyPoint.geometry?.firstMaterial = boxMaterial
-    eightyPoint.position = SCNVector3Make(5/viewScale, 80/viewScale, 0)
-    eightyPoint.rotation = SCNVector4Make(1, 0, 0, 90)
-    scene.rootNode.addChildNode(eightyPoint)
+    let eightPoint = ObjectOfIntereset(vec: SCNVector3Make(-92.5 / viewScale, 22.5 / viewScale, 0),
+                                         scale: viewScale, pointName: "point 8")
+    scene.rootNode.addChildNode(eightPoint)
     
-    let ninthPoint = SCNNode()
-    ninthPoint.name = "point 4"
-    ninthPoint.geometry = SCNCylinder(radius: 10/view.objectScale, height: 0.1)
-    ninthPoint.geometry?.firstMaterial = boxMaterial
-    ninthPoint.position = SCNVector3Make(10/viewScale, -65/viewScale, 0)
-    ninthPoint.rotation = SCNVector4Make(1, 0, 0, 90)
+    let ninthPoint = ObjectOfIntereset(vec: SCNVector3Make(5/viewScale, 80/viewScale, 0),
+                                       scale: viewScale, pointName: "point 9")
     scene.rootNode.addChildNode(ninthPoint)
-    
-    let tenthPoint = SCNNode()
-    tenthPoint.name = "point 3"
-    tenthPoint.geometry = SCNCylinder(radius: 15/view.objectScale, height: 0.1)
-    tenthPoint.geometry?.firstMaterial = boxMaterial
-    tenthPoint.position = SCNVector3Make(10/viewScale, -110/viewScale, 0)
-    tenthPoint.rotation = SCNVector4Make(1, 0, 0, 90)
+
+
+    let tenthPoint = ObjectOfIntereset(vec: SCNVector3Make(-125/viewScale, -10/viewScale, 0),
+                                       scale: viewScale, pointName: "point 10")
     scene.rootNode.addChildNode(tenthPoint)
     
-    let eleventhPoint = SCNNode()
-    eleventhPoint.name = "point 5"
-    eleventhPoint.geometry = SCNCylinder(radius: 10/view.objectScale, height: 0.1)
-    eleventhPoint.geometry?.firstMaterial = boxMaterial
-    eleventhPoint.position = SCNVector3Make(70/viewScale, 80/viewScale, 0)
-    eleventhPoint.rotation = SCNVector4Make(50/viewScale, 0, 0, 90)
-    scene.rootNode.addChildNode(eleventhPoint)
+    let eleventhPointPoint = ObjectOfIntereset(vec: SCNVector3Make(-115/viewScale, 100/viewScale, 0),
+                                       scale: viewScale, pointName: "point 11")
+    scene.rootNode.addChildNode(eleventhPointPoint)
     
-    let twelvePoint = SCNNode()
-    twelvePoint.name = "point 12"
-    twelvePoint.geometry = SCNCylinder(radius: 10/view.objectScale, height: 0.1)
-    twelvePoint.geometry?.firstMaterial = boxMaterial
-    twelvePoint.position = SCNVector3Make(120/viewScale, 35/viewScale, 0)
-    twelvePoint.rotation = SCNVector4Make(50/viewScale, 0, 0, 90)
-    scene.rootNode.addChildNode(twelvePoint)
-    
+    let twelthPointPoint = ObjectOfIntereset(vec: SCNVector3Make(120/viewScale, 35/viewScale, 0),
+                                               scale: viewScale, pointName: "point 12")
+    scene.rootNode.addChildNode(twelthPointPoint)
     return scene
   }
   

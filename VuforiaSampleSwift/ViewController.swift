@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ViewController: UIViewController {
   
@@ -28,7 +29,7 @@ class ViewController: UIViewController {
   deinit {
     NotificationCenter.default.removeObserver(self)
   }
-    
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     setupNavigationController()
@@ -124,20 +125,24 @@ extension ViewController: VuforiaManagerDelegate {
     for index in 0 ..< state.numberOfTrackableResults {
       let result = state.trackableResult(at: index)
       let trackerableName = result?.trackable.name
-      if trackerableName == "stones" {
-        boxMaterial.diffuse.contents = UIColor.red
-        
-        if lastSceneName != "stones" {
-          manager.eaglView.setNeedsChangeSceneWithUserInfo(["scene" : "stones"])
-          lastSceneName = "stones"
+      if trackerableName == "Starry" {
+        if lastSceneName != "Starry" {
+          manager.eaglView.setNeedsChangeSceneWithUserInfo(["scene" : "Starry"])
+          lastSceneName = "Starry"
         }
-      } else {
+      }
+      if trackerableName == "Gothic" {
         if lastSceneName != "Gothic" {
           manager.eaglView.setNeedsChangeSceneWithUserInfo(["scene" : "Gothic"])
           lastSceneName = "Gothic"
         }
       }
-      
+      if trackerableName == "Madonna" {
+        if lastSceneName != "Madonna" {
+          manager.eaglView.setNeedsChangeSceneWithUserInfo(["scene" : "Madonna"])
+          lastSceneName = "Madonna"
+        }
+      }
     }
   }
 }
@@ -156,6 +161,12 @@ extension ViewController: VuforiaEAGLViewSceneSource, VuforiaEAGLViewDelegate {
     case "Gothic":
       print("AmericanGothic scene")
       return createAmericanGothic(with: view)
+    case "Starry":
+      print("Starry scene")
+      return createStarry(with: view)
+    case "Madonna":
+      print("Madonna scene")
+      return createMaddona(with: view)
     default:
       return SCNScene()
     }
@@ -166,7 +177,7 @@ extension ViewController: VuforiaEAGLViewSceneSource, VuforiaEAGLViewDelegate {
     let viewScale = Float(view.objectScale)
     
     let americanGothic = AmericanGothic(viewScale: viewScale)
-  
+    
     lastPicture = Picture()
     lastPicture!.id = "0"
     lastPicture!.imageName = "01"
@@ -183,23 +194,9 @@ extension ViewController: VuforiaEAGLViewSceneSource, VuforiaEAGLViewDelegate {
     boxMaterial.transparency = 0.5
     
     
-    
-//    let lightNode = SCNNode()
-//    lightNode.light = SCNLight()
-//    lightNode.light?.type = .omni
-//    lightNode.light?.color = UIColor.lightGray
-//    lightNode.position = SCNVector3(x:0, y:10, z:10)
-//    scene.rootNode.addChildNode(lightNode)
-//    
-//    let ambientLightNode = SCNNode()
-//    ambientLightNode.light = SCNLight()
-//    ambientLightNode.light?.type = .ambient
-//    ambientLightNode.light?.color = UIColor.darkGray
-//    scene.rootNode.addChildNode(ambientLightNode)
-    
     let planeNode = SCNNode()
     planeNode.name = "plane"
-    planeNode.geometry = SCNPlane(width: 300.0/view.objectScale, height: 350.0/view.objectScale)
+    planeNode.geometry = SCNPlane(width: 300.0/view.objectScale, height: 365/view.objectScale)
     planeNode.position = SCNVector3Make(0, 0, -1)
     let planeMaterial = SCNMaterial()
     planeMaterial.diffuse.contents = UIColor.clear
@@ -209,58 +206,91 @@ extension ViewController: VuforiaEAGLViewSceneSource, VuforiaEAGLViewDelegate {
     
     for position in americanGothic.positions {
       let point = ObjectOfIntereset(vec: position.vector(),
-                                         scale: viewScale, pointName: position.title)
+                                    scale: viewScale, pointName: position.title)
       scene.rootNode.addChildNode(point)
     }
+    return scene
+  }
+  
+  fileprivate func createStarry(with view: VuforiaEAGLView) -> SCNScene {
+    
+    let viewScale = Float(view.objectScale)
+    
+    //    let americanGothic = AmericanGothic(viewScale: viewScale)
+    
+    lastPicture = Picture()
+    lastPicture!.id = "0"
+    lastPicture!.imageName = "01"
+    lastPicture!.category = ""
+    lastPicture!.title = ""
+    lastPicture!.text = ""
+    lastPicture!.xMultiplier = 6
+    lastPicture!.yMultiplier = 7
+    //    lastPicture!.annotations = americanGothic.positions
+    
+    let scene = SCNScene()
+    boxMaterial.diffuse.contents = UIColor.white
+    boxMaterial.diffuse.borderColor = UIColor.white
+    boxMaterial.transparency = 0.5
     
     
-
-
-//    
-//    let secondPoint = ObjectOfIntereset(vec: SCNVector3Make(-57.5 / viewScale, -35 / viewScale, 0),
-//                                        scale: viewScale, pointName: "point 2")
-//    scene.rootNode.addChildNode(secondPoint)
-//    
-//    let thirdPoint = ObjectOfIntereset(vec: SCNVector3Make(10/viewScale, -110/viewScale, 0),
-//                                        scale: viewScale, pointName: "point 3")
-//    scene.rootNode.addChildNode(thirdPoint)
-//    
-//    let fourthPoint = ObjectOfIntereset(vec: SCNVector3Make(10/viewScale, -65/viewScale, 0),
-//                                       scale: viewScale, pointName: "point 4")
-//    scene.rootNode.addChildNode(fourthPoint)
-//    
-//    let fithPoint = ObjectOfIntereset(vec: SCNVector3Make(70/viewScale, 80/viewScale, 0),
-//                                        scale: viewScale, pointName: "point 5")
-//    scene.rootNode.addChildNode(fithPoint)
-//    
-//    let sixPoint = ObjectOfIntereset(vec: SCNVector3Make(-72.5/viewScale, -75/viewScale, 0),
-//                                      scale: viewScale, pointName: "point 6")
-//    scene.rootNode.addChildNode(sixPoint)
-//    
-//    let seventhPoint = ObjectOfIntereset(vec: SCNVector3Make(-70/viewScale, -0.55, 0),
-//                                     scale: viewScale, pointName: "point 7")
-//    scene.rootNode.addChildNode(seventhPoint)
-//    
-//    let eightPoint = ObjectOfIntereset(vec: SCNVector3Make(-92.5 / viewScale, 22.5 / viewScale, 0),
-//                                         scale: viewScale, pointName: "point 8")
-//    scene.rootNode.addChildNode(eightPoint)
-//    
-//    let ninthPoint = ObjectOfIntereset(vec: SCNVector3Make(5/viewScale, 80/viewScale, 0),
-//                                       scale: viewScale, pointName: "point 9")
-//    scene.rootNode.addChildNode(ninthPoint)
-//
-//
-//    let tenthPoint = ObjectOfIntereset(vec: SCNVector3Make(-125/viewScale, -10/viewScale, 0),
-//                                       scale: viewScale, pointName: "point 10")
-//    scene.rootNode.addChildNode(tenthPoint)
-//    
-//    let eleventhPointPoint = ObjectOfIntereset(vec: SCNVector3Make(-115/viewScale, 100/viewScale, 0),
-//                                       scale: viewScale, pointName: "point 11")
-//    scene.rootNode.addChildNode(eleventhPointPoint)
-//    
-//    let twelthPointPoint = ObjectOfIntereset(vec: SCNVector3Make(120/viewScale, 35/viewScale, 0),
-//                                               scale: viewScale, pointName: "point 12")
-//    scene.rootNode.addChildNode(twelthPointPoint)
+    let planeNode = SCNNode()
+    planeNode.name = "plane"
+    planeNode.geometry = SCNPlane(width: 300.0/view.objectScale, height: 275/view.objectScale)
+    planeNode.position = SCNVector3Make(0, 0, -1)
+    let planeMaterial = SCNMaterial()
+    planeMaterial.diffuse.contents = UIColor.red
+    planeMaterial.transparency = 0.4
+    planeNode.geometry?.firstMaterial = planeMaterial
+    scene.rootNode.addChildNode(planeNode)
+    
+    
+    //    for position in americanGothic.positions {
+    //      let point = ObjectOfIntereset(vec: position.vector(),
+    //                                    scale: viewScale, pointName: position.title)
+    //      scene.rootNode.addChildNode(point)
+    //    }
+    return scene
+  }
+  
+  fileprivate func createMaddona(with view: VuforiaEAGLView) -> SCNScene {
+    
+    let viewScale = Float(view.objectScale)
+    
+    //    let americanGothic = AmericanGothic(viewScale: viewScale)
+    
+    lastPicture = Picture()
+    lastPicture!.id = "0"
+    lastPicture!.imageName = "01"
+    lastPicture!.category = ""
+    lastPicture!.title = ""
+    lastPicture!.text = ""
+    lastPicture!.xMultiplier = 6
+    lastPicture!.yMultiplier = 7
+    //    lastPicture!.annotations = americanGothic.positions
+    
+    let scene = SCNScene()
+    boxMaterial.diffuse.contents = UIColor.white
+    boxMaterial.diffuse.borderColor = UIColor.white
+    boxMaterial.transparency = 0.5
+    
+    
+    let planeNode = SCNNode()
+    planeNode.name = "plane"
+    planeNode.geometry = SCNPlane(width: 300.0/view.objectScale, height: 350/view.objectScale)
+    planeNode.position = SCNVector3Make(0, 0, -1)
+    let planeMaterial = SCNMaterial()
+    planeMaterial.diffuse.contents = UIColor.red
+    planeMaterial.transparency = 0.4
+    planeNode.geometry?.firstMaterial = planeMaterial
+    scene.rootNode.addChildNode(planeNode)
+    
+    
+    //    for position in americanGothic.positions {
+    //      let point = ObjectOfIntereset(vec: position.vector(),
+    //                                    scale: viewScale, pointName: position.title)
+    //      scene.rootNode.addChildNode(point)
+    //    }
     return scene
   }
   
@@ -269,7 +299,7 @@ extension ViewController: VuforiaEAGLViewSceneSource, VuforiaEAGLViewDelegate {
     
     boxMaterial.diffuse.contents = UIColor.lightGray
     
-
+    
     
     let planeNode = SCNNode()
     planeNode.name = "plane"
@@ -296,7 +326,6 @@ extension ViewController: VuforiaEAGLViewSceneSource, VuforiaEAGLViewDelegate {
     print("touch down \(node.name)\n")
     if let zoneNode = node as? ObjectOfIntereset {
       
-      
       let vc = UIStoryboard(name: "Main", bundle: nil)
         .instantiateViewController(withIdentifier: "PictureCardViewController") as! PictureCardViewController
       vc.picture = lastPicture
@@ -309,7 +338,7 @@ extension ViewController: VuforiaEAGLViewSceneSource, VuforiaEAGLViewDelegate {
         present(vc, animated: true, completion: nil)
       }
     }
-//    boxMaterial.transparency = 0.6
+    //    boxMaterial.transparency = 0.6
   }
   
   func vuforiaEAGLView(_ view: VuforiaEAGLView!, didTouchUp node: SCNNode!) {

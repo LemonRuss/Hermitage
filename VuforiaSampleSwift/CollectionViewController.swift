@@ -17,12 +17,17 @@ class CollectionViewController: UIViewController {
   
   override func viewDidLoad() {
     super.awakeFromNib()
+    title = "МОЯ КОЛЛЕКЦИЯ"
     setupNavigationController()
     setupBackButton()
-    
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     let realm = try! Realm()
-    let objects = realm.objects(Picture.self)
+    let objects = realm.objects(Picture.self).filter("isCollection == true")
     pictures = Array(objects)
+    collectionView.reloadData()
   }
 }
 
@@ -40,7 +45,11 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    print("You selected cell #\(indexPath.item)!")
+    let vc = UIStoryboard(name: "Main", bundle: nil)
+      .instantiateViewController(withIdentifier: "PictureCardViewController") as! PictureCardViewController
+    vc.picture = pictures[indexPath.row]
+    present(vc, animated: true, completion: nil)
+
   }
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

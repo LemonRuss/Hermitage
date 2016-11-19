@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SocialPreviewCell" rowHeight="151" id="lx3-nd-TvB" customClass="SocialPreviewCell" customModule="VuforiaSampleSwift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="439" height="101"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lx3-nd-TvB" id="GsR-1p-52Z">
+                <rect key="frame" x="0.0" y="0.0" width="439" height="100.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTJ-yO-Bz5">
+                        <rect key="frame" x="0.0" y="0.0" width="439" height="100"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="S1" translatesAutoresizingMaskIntoConstraints="NO" id="9vq-6z-jqi">
+                                <rect key="frame" x="10" y="10" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="fnc-C2-INV"/>
+                                    <constraint firstAttribute="width" constant="70" id="vn4-Hr-tZj"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="S2" translatesAutoresizingMaskIntoConstraints="NO" id="b9U-vk-mJS">
+                                <rect key="frame" x="88" y="10" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="JoR-wm-b4Q"/>
+                                    <constraint firstAttribute="width" constant="70" id="LkL-dy-wRc"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="S3" translatesAutoresizingMaskIntoConstraints="NO" id="qS5-o2-5zN">
+                                <rect key="frame" x="166" y="10" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="44I-vr-hjR"/>
+                                    <constraint firstAttribute="width" constant="70" id="z9b-1e-mpX"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="S4" translatesAutoresizingMaskIntoConstraints="NO" id="nXr-cb-IvY">
+                                <rect key="frame" x="244" y="10" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="VYr-80-xB2"/>
+                                    <constraint firstAttribute="height" constant="70" id="dD5-ZL-SJ2"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="nXr-cb-IvY" firstAttribute="leading" secondItem="qS5-o2-5zN" secondAttribute="trailing" constant="8" id="2gQ-VA-y5C"/>
+                            <constraint firstAttribute="bottom" secondItem="9vq-6z-jqi" secondAttribute="bottom" constant="20" id="4iv-4t-Iug"/>
+                            <constraint firstItem="9vq-6z-jqi" firstAttribute="top" secondItem="dTJ-yO-Bz5" secondAttribute="top" constant="10" id="7Ib-hk-Jyp"/>
+                            <constraint firstItem="nXr-cb-IvY" firstAttribute="top" secondItem="dTJ-yO-Bz5" secondAttribute="top" constant="10" id="8dx-C7-Pz1"/>
+                            <constraint firstItem="b9U-vk-mJS" firstAttribute="top" secondItem="dTJ-yO-Bz5" secondAttribute="top" constant="10" id="FTN-mP-Amc"/>
+                            <constraint firstItem="b9U-vk-mJS" firstAttribute="leading" secondItem="9vq-6z-jqi" secondAttribute="trailing" constant="8" id="MrH-mG-rFW"/>
+                            <constraint firstItem="qS5-o2-5zN" firstAttribute="leading" secondItem="b9U-vk-mJS" secondAttribute="trailing" constant="8" id="Nuz-pP-PQ1"/>
+                            <constraint firstItem="qS5-o2-5zN" firstAttribute="top" secondItem="dTJ-yO-Bz5" secondAttribute="top" constant="10" id="YOU-5L-vS9"/>
+                            <constraint firstItem="9vq-6z-jqi" firstAttribute="leading" secondItem="dTJ-yO-Bz5" secondAttribute="leading" constant="10" id="eE1-ym-Ern"/>
+                            <constraint firstAttribute="height" constant="100" id="eWm-Hy-TiD"/>
+                            <constraint firstAttribute="trailing" secondItem="nXr-cb-IvY" secondAttribute="trailing" constant="10" id="mIr-m4-YUi"/>
+                        </constraints>
+                    </scrollView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="dTJ-yO-Bz5" secondAttribute="trailing" id="1Sx-XR-dZe"/>
+                    <constraint firstAttribute="bottom" secondItem="dTJ-yO-Bz5" secondAttribute="bottom" id="3aF-nO-Xzl"/>
+                    <constraint firstItem="dTJ-yO-Bz5" firstAttribute="leading" secondItem="GsR-1p-52Z" secondAttribute="leading" id="aKZ-vA-PQJ"/>
+                    <constraint firstItem="dTJ-yO-Bz5" firstAttribute="top" secondItem="GsR-1p-52Z" secondAttribute="top" id="fqd-q3-QnB"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="93.5" y="120.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="S1" width="64" height="64"/>
+        <image name="S2" width="64" height="64"/>
+        <image name="S3" width="64" height="64"/>
+        <image name="S4" width="64" height="64"/>
+    </resources>
+</document>

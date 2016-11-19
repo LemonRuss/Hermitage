@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="iNz-sX-Lx4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="syJ-7u-g45">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -38,7 +38,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1055" y="1364"/>
+            <point key="canvasLocation" x="1053.5999999999999" y="1363.2683658170915"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lmg-YM-MGq">
@@ -52,9 +52,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="syJ-7u-g45" kind="relationship" relationship="rootViewController" id="92I-dv-qfv"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmz-CD-UGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -84,21 +81,40 @@
         <!--Picture Card View Controller-->
         <scene sceneID="7t9-eD-5lQ">
             <objects>
-                <viewController id="syJ-7u-g45" customClass="PictureCardViewController" customModule="VuforiaSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="syJ-7u-g45" customClass="PictureCardViewController" customModule="VuforiaSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7zy-5i-9t0"/>
                         <viewControllerLayoutGuide type="bottom" id="2u5-3B-rt8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Gj1-RD-WuZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="efK-8d-66g">
+                                <rect key="frame" x="0.0" y="28" width="375" height="639"/>
+                                <color key="backgroundColor" red="0.086274509803921567" green="0.086274509803921567" blue="0.086274509803921567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="syJ-7u-g45" id="fRk-nW-SYP"/>
+                                    <outlet property="delegate" destination="syJ-7u-g45" id="9QN-Da-DCa"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="0.086274509803921567" green="0.086274509803921567" blue="0.086274509803921567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="efK-8d-66g" firstAttribute="leading" secondItem="Gj1-RD-WuZ" secondAttribute="leading" id="H0o-ck-2eZ"/>
+                            <constraint firstAttribute="trailing" secondItem="efK-8d-66g" secondAttribute="trailing" id="RUL-0G-ocR"/>
+                            <constraint firstItem="efK-8d-66g" firstAttribute="top" secondItem="7zy-5i-9t0" secondAttribute="bottom" constant="8" symbolic="YES" id="eiG-jJ-18a"/>
+                            <constraint firstItem="2u5-3B-rt8" firstAttribute="top" secondItem="efK-8d-66g" secondAttribute="bottom" id="zV9-iG-gqM"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dNz-zL-gKm"/>
+                    <connections>
+                        <outlet property="tableView" destination="efK-8d-66g" id="WEc-VV-Jy7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tcN-as-ocR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1927" y="2146"/>
+            <point key="canvasLocation" x="1863" y="1363"/>
         </scene>
     </scenes>
     <resources>

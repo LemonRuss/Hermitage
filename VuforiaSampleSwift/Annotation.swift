@@ -13,6 +13,7 @@ import Realm
 class Annotation: Object, AnnotationProtocol {
   
   dynamic var title = ""
+  dynamic var index = 0
   dynamic var category = ""
   dynamic var text = ""
   dynamic var xCoord: CGFloat = 0

@@ -34,7 +34,7 @@ struct Hristos {
     
     for (index, point) in points.enumerated() {
       let annotation = Annotation()
-      annotation.title = "Point \(index)"
+      annotation.index = index
       annotation.category = "Интересный факт"
       annotation.text = facts[index]
       annotation.xCoord = CGFloat(point.x / viewScale)

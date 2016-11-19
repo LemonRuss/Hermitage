@@ -45,6 +45,8 @@ extension PhotoCell: ConfigurableCell {
     
     annotations = picture.annotations
     
+    littleImageView.isUserInteractionEnabled = true
+    
     for (index, annotation) in picture.annotations.enumerated() {
       let x = annotation.bacis().x
       let y = annotation.bacis().y
@@ -66,6 +68,7 @@ extension PhotoCell: ConfigurableCell {
       button.tag = index
       button.addTarget(self, action: #selector(annotationPressed(sender:)), for: .touchUpInside)
       button.addTarget(self, action: #selector(annotationHighlighted(sender:)), for: .touchDown)
+      button.isUserInteractionEnabled = true
       
       littleImageView.addSubview(button)
     }

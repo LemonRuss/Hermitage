@@ -19,7 +19,7 @@ class AnnotationCell: UITableViewCell {
     super.awakeFromNib()
     // Initialization code
   }
-  
+    
 }
 
 extension AnnotationCell: ConfigurableCell {

@@ -37,8 +37,18 @@ class PictureCardViewController: UIViewController {
   }
   
   func show(picture: Picture) {
+    
+    let photoCellAction = TableRowAction<PhotoCell>(.custom(PhotoCell.Actions.AnnotationPressed)) {
+      [weak self] data in
+      if let index = data.userInfo?["index"] as? Int {
+        let row = TableRow<AnnotationCell>(item: picture.annotations[index])
+        self?.tableDirector.sections.first!.replace(rowAt: 1, with: row)
+        self?.tableDirector.reload()
+      }
+    }
+    
     var rows = [Row]()
-    rows.append(TableRow<PhotoCell>(item: picture))
+    rows.append(TableRow<PhotoCell>(item: picture, actions: [photoCellAction]))
     
     if let selectedAnnotation = selectedAnnotation {
       rows.append(TableRow<AnnotationCell>(item: selectedAnnotation))

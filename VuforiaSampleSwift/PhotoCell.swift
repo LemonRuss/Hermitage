@@ -11,6 +11,9 @@ import RealmSwift
 
 class PhotoCell: UITableViewCell {
   
+  struct Actions {
+    static let AnnotationPressed = "AnnotationPressed"
+  }
   @IBOutlet weak var bigImageView: UIImageView!
   @IBOutlet weak var littleImageView: UIImageView!
   
@@ -76,6 +79,7 @@ extension PhotoCell: ConfigurableCell {
   
   func annotationPressed(sender:  UIButton) {
     sender.alpha = 1.0
+    TableCellAction(key: Actions.AnnotationPressed, sender: self, userInfo: ["index": sender.tag]).invoke()
     print(sender.tag)
   }
   

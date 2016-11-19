@@ -90,28 +90,35 @@ private extension ViewController {
     vuforiaManager?.prepare(with: .portrait)
     
     
-
-  }
-  
-  func putButton() {
     let height = UIScreen.main.bounds.height
     let width = UIScreen.main.bounds.width
     
-
-    button = UIButton(frame: CGRect(x: 0, y: height - 100, width: width, height: 50))
-    
-
-    button?.setTitle("Подробнее", for: .normal)
-    
-    button?.backgroundColor = UIColor(red: 162.0/255.0, green: 38.0/255.0,
-                                     blue: 76.0/255.0, alpha: 1)
-    
-    button?.addTarget(self, action: #selector(openPicture), for: .touchUpInside)
-    
-    guard let button = button else {
-      return
+    DispatchQueue.main.async {
+      self.button = UIButton(frame: CGRect(x: 0, y: height - 100, width: width, height: 50))
+      
+      
+      self.button?.setTitle("Подробнее", for: .normal)
+      
+      self.button?.backgroundColor = UIColor(red: 162.0/255.0, green: 38.0/255.0,
+                                             blue: 76.0/255.0, alpha: 1)
+      
+      self.button?.addTarget(self, action: #selector(self.openPicture), for: .touchUpInside)
+      //
+      //      guard let button = self.button else {
+      //        return
+      //      }
+      self.view.addSubview(self.button!)
+      
+      self.button?.isHidden = true
     }
-    view.addSubview(button)
+  }
+  
+  func putButton() {
+
+    DispatchQueue.main.async {
+      self.button?.isHidden = false
+    }
+    
   }
   
   @objc func openPicture() {
@@ -124,10 +131,9 @@ private extension ViewController {
   }
   
   func removeButton() {
-    guard let button = button else {
-      return
+    DispatchQueue.main.async {
+      self.button?.isHidden = true
     }
-    button.removeFromSuperview()
   }
   
   func pause() {
@@ -174,6 +180,10 @@ extension ViewController: VuforiaManagerDelegate {
   }
   
   func vuforiaManager(_ manager: VuforiaManager!, didUpdateWith state: VuforiaState!) {
+    guard state.numberOfTrackableResults != 0 else {
+      removeButton()
+      return
+    }
     for index in 0 ..< state.numberOfTrackableResults {
       let result = state.trackableResult(at: index)
       let trackerableName = result?.trackable.name
@@ -365,7 +375,7 @@ extension ViewController: VuforiaEAGLViewSceneSource, VuforiaEAGLViewDelegate {
     
     let viewScale = Float(view.objectScale)
     
-        let hristos = Hristos(viewScale: viewScale)
+    let hristos = Hristos(viewScale: viewScale)
     
     lastPicture = Picture()
     lastPicture!.id = "3"

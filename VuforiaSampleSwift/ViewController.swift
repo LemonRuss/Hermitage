@@ -33,6 +33,11 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     setupNavigationController()
     setupBackButton()
+//    prepare()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
     prepare()
   }
   
@@ -142,6 +147,18 @@ extension ViewController: VuforiaManagerDelegate {
           lastSceneName = "Madonna"
         }
       }
+      if trackerableName == "Hristos" {
+        if lastSceneName != "Hristos" {
+          manager.eaglView.setNeedsChangeSceneWithUserInfo(["scene" : "Hristos"])
+          lastSceneName = "Hristos"
+        }
+      }
+      if trackerableName == "Hovhannes" {
+        if lastSceneName != "Hovhannes" {
+          manager.eaglView.setNeedsChangeSceneWithUserInfo(["scene" : "Hovhannes"])
+          lastSceneName = "Hovhannes"
+        }
+      }
     }
   }
 }
@@ -166,6 +183,12 @@ extension ViewController: VuforiaEAGLViewSceneSource, VuforiaEAGLViewDelegate {
     case "Madonna":
       print("Madonna scene")
       return createMaddona(with: view)
+    case "Hristos":
+      print("Hristos scene")
+      return createHristos(with: view)
+    case "Hovhannes":
+      print("Hovhannes scene")
+      return createHovhannes(with: view)
     default:
       return SCNScene()
     }
@@ -276,7 +299,7 @@ extension ViewController: VuforiaEAGLViewSceneSource, VuforiaEAGLViewDelegate {
     
     let planeNode = SCNNode()
     planeNode.name = "plane"
-    planeNode.geometry = SCNPlane(width: 300.0/view.objectScale, height: 350/view.objectScale)
+    planeNode.geometry = SCNPlane(width: 300.0/view.objectScale, height: 380/view.objectScale)
     planeNode.position = SCNVector3Make(0, 0, -1)
     let planeMaterial = SCNMaterial()
     planeMaterial.diffuse.contents = UIColor.red
@@ -292,6 +315,89 @@ extension ViewController: VuforiaEAGLViewSceneSource, VuforiaEAGLViewDelegate {
     //    }
     return scene
   }
+  
+  fileprivate func createHristos(with view: VuforiaEAGLView) -> SCNScene {
+    
+    let viewScale = Float(view.objectScale)
+    
+    //    let americanGothic = AmericanGothic(viewScale: viewScale)
+    
+    lastPicture = Picture()
+    lastPicture!.id = "0"
+    lastPicture!.imageName = "01"
+    lastPicture!.category = ""
+    lastPicture!.title = ""
+    lastPicture!.text = ""
+    lastPicture!.xMultiplier = 6
+    lastPicture!.yMultiplier = 7
+    //    lastPicture!.annotations = americanGothic.positions
+    
+    let scene = SCNScene()
+    boxMaterial.diffuse.contents = UIColor.white
+    boxMaterial.diffuse.borderColor = UIColor.white
+    boxMaterial.transparency = 0.5
+    
+    
+    let planeNode = SCNNode()
+    planeNode.name = "plane"
+    planeNode.geometry = SCNPlane(width: 300.0/view.objectScale, height: 210/view.objectScale)
+    planeNode.position = SCNVector3Make(0, 0, -1)
+    let planeMaterial = SCNMaterial()
+    planeMaterial.diffuse.contents = UIColor.red
+    planeMaterial.transparency = 0.4
+    planeNode.geometry?.firstMaterial = planeMaterial
+    scene.rootNode.addChildNode(planeNode)
+    
+    
+    //    for position in americanGothic.positions {
+    //      let point = ObjectOfIntereset(vec: position.vector(),
+    //                                    scale: viewScale, pointName: position.title)
+    //      scene.rootNode.addChildNode(point)
+    //    }
+    return scene
+  }
+  
+  fileprivate func createHovhannes(with view: VuforiaEAGLView) -> SCNScene {
+    
+    let viewScale = Float(view.objectScale)
+    
+    //    let americanGothic = AmericanGothic(viewScale: viewScale)
+    
+    lastPicture = Picture()
+    lastPicture!.id = "0"
+    lastPicture!.imageName = "01"
+    lastPicture!.category = ""
+    lastPicture!.title = ""
+    lastPicture!.text = ""
+    lastPicture!.xMultiplier = 6
+    lastPicture!.yMultiplier = 7
+    //    lastPicture!.annotations = americanGothic.positions
+    
+    let scene = SCNScene()
+    boxMaterial.diffuse.contents = UIColor.white
+    boxMaterial.diffuse.borderColor = UIColor.white
+    boxMaterial.transparency = 0.5
+    
+    
+    let planeNode = SCNNode()
+    planeNode.name = "plane"
+    planeNode.geometry = SCNPlane(width: 300.0/view.objectScale, height: 210/view.objectScale)
+    planeNode.position = SCNVector3Make(0, 0, -1)
+    let planeMaterial = SCNMaterial()
+    planeMaterial.diffuse.contents = UIColor.red
+    planeMaterial.transparency = 0.4
+    planeNode.geometry?.firstMaterial = planeMaterial
+    scene.rootNode.addChildNode(planeNode)
+    
+    
+    //    for position in americanGothic.positions {
+    //      let point = ObjectOfIntereset(vec: position.vector(),
+    //                                    scale: viewScale, pointName: position.title)
+    //      scene.rootNode.addChildNode(point)
+    //    }
+    return scene
+  }
+  
   
   fileprivate func createDefaultScene(with view: VuforiaEAGLView) -> SCNScene {
     let scene = SCNScene()

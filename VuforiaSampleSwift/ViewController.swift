@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     let vuforiaLicenseKey = "AXcBHiT/////AAAAGZurqBGag0UWguJCHn80xtNYwoLJhChJy+SlEsgOvROS5+CoBuMxNPhRcbHxg/uTGIUQGCZfrGcA6OHSXS54QAZudtxFo895ncMTX3X40QsjnH6Q8z/U84yWJqvFJFRmzGBRR6rBfXQBvuj4y5694ovzdNyRtFmxI8d0OaVrlVuk0gKxWtYym5i0vtGKtbQjSmeeEDM4Wcp5LvZatOLftQZ4nsnvPquz8azrJ5ljFxSm6V9oTmXOm4kYiBSw2ZxhdmmuaMTiSUEBlLIiVrzxfDGBkmASpJBJ15qeXKGI2y+qzlnqeU+71GMUHtOV74+HXGMqDtaISnXXnYYsWOa/0vl1e32Khbsn8mAhXdmN2u+z"
-    let vuforiaDataSetFile = "StonesAndChips.xml"
+    let vuforiaDataSetFile = "Pitcur.xml"
     
     var vuforiaManager: VuforiaManager? = nil
     
@@ -187,6 +187,8 @@ extension ViewController: VuforiaEAGLViewSceneSource, VuforiaEAGLViewDelegate {
         boxNode.name = "box"
         boxNode.geometry = SCNBox(width:1, height:1, length:1, chamferRadius:0.0)
         boxNode.geometry?.firstMaterial = boxMaterial
+        boxNode.position = SCNVector3Make(0, 0, 0)
+      
         scene.rootNode.addChildNode(boxNode)
         
         return scene
@@ -212,8 +214,9 @@ extension ViewController: VuforiaEAGLViewSceneSource, VuforiaEAGLViewDelegate {
         
         let planeNode = SCNNode()
         planeNode.name = "plane"
-        planeNode.geometry = SCNPlane(width: 247.0/view.objectScale, height: 173.0/view.objectScale)
+        planeNode.geometry = SCNPlane(width: 300.0/view.objectScale, height: 355.0/view.objectScale)
         planeNode.position = SCNVector3Make(0, 0, -1)
+      
         let planeMaterial = SCNMaterial()
         planeMaterial.diffuse.contents = UIColor.red
         planeMaterial.transparency = 0.6

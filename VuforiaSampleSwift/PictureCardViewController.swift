@@ -27,25 +27,6 @@ class PictureCardViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-//    let annotation = Annotation()
-//    annotation.title = "Title"
-//    annotation.category = "Categoty"
-//    annotation.text = "Text"
-//    annotation.xCoord = -1.8
-//    annotation.yCoord = 1.4
-//    
-//    let picture = Picture()
-//    picture.id = "1"
-//    picture.imageName = "01"
-//    picture.category = "Picture category"
-//    picture.title = "Picture title"
-//    picture.text = "Picture text"
-//    picture.xMultiplier = 6.0
-//    picture.yMultiplier = 7.0
-//    picture.annotations.append(annotation)
-    
-
   }
 
   override func viewDidAppear(_ animated: Bool) {

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="Hristos" size="300.000000 209.150330" />
+    <ImageTarget name="Starry" size="300.000000 237.500000" />
+    <ImageTarget name="Madonna" size="300.000000 382.851440" />
+    <ImageTarget name="Hovhannes" size="300.000000 201.574799" />
     <ImageTarget name="Gothic" size="300.000000 360.576935" />
   </Tracking>
 </QCARConfig>

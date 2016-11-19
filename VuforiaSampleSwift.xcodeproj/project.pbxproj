@@ -12,6 +12,8 @@
 		6B60CE211DE055370093F5FD /* frame-markers-transparent.zip in Resources */ = {isa = PBXBuildFile; fileRef = 6B60CDBF1DE055370093F5FD /* frame-markers-transparent.zip */; };
 		6B60CE231DE055370093F5FD /* license_3rdpartynotice.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6B60CE1F1DE055370093F5FD /* license_3rdpartynotice.txt */; };
 		6B60CE241DE055370093F5FD /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6B60CE201DE055370093F5FD /* readme.txt */; };
+		6B60CE271DE05B7C0093F5FD /* Pitcur.dat in Resources */ = {isa = PBXBuildFile; fileRef = 6B60CE251DE05B7C0093F5FD /* Pitcur.dat */; };
+		6B60CE281DE05B7C0093F5FD /* Pitcur.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6B60CE261DE05B7C0093F5FD /* Pitcur.xml */; };
 		926096D41D4163B600510C24 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 926096D31D4163B600510C24 /* SpriteKit.framework */; };
 		927B76D71D27FDC600C4F5CC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 927B76D41D27FDC600C4F5CC /* AVFoundation.framework */; };
 		927B76D81D27FDC600C4F5CC /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 927B76D51D27FDC600C4F5CC /* CoreMotion.framework */; };
@@ -135,6 +137,8 @@
 		6B60CE1D1DE055370093F5FD /* libVuforia.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libVuforia.a; sourceTree = "<group>"; };
 		6B60CE1F1DE055370093F5FD /* license_3rdpartynotice.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license_3rdpartynotice.txt; sourceTree = "<group>"; };
 		6B60CE201DE055370093F5FD /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		6B60CE251DE05B7C0093F5FD /* Pitcur.dat */ = {isa = PBXFileReference; lastKnownFileType = file; name = Pitcur.dat; path = VuforiaSampleSwift/VuforiaAssets/ImageTargets/Pitcur.dat; sourceTree = "<group>"; };
+		6B60CE261DE05B7C0093F5FD /* Pitcur.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Pitcur.xml; path = VuforiaSampleSwift/VuforiaAssets/ImageTargets/Pitcur.xml; sourceTree = "<group>"; };
 		926096D31D4163B600510C24 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		927B76D31D27FDC600C4F5CC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		927B76D41D27FDC600C4F5CC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -426,6 +430,8 @@
 		92AA10FC1D27A5EB00E56CBE = {
 			isa = PBXGroup;
 			children = (
+				6B60CE251DE05B7C0093F5FD /* Pitcur.dat */,
+				6B60CE261DE05B7C0093F5FD /* Pitcur.xml */,
 				92AA11071D27A5EB00E56CBE /* VuforiaSampleSwift */,
 				92AA11061D27A5EB00E56CBE /* Products */,
 				6B60CD521DE054780093F5FD /* Frameworks */,
@@ -530,6 +536,8 @@
 				927B76FA1D28070D00C4F5CC /* Tarmac.xml in Resources */,
 				92AA11101D27A5EB00E56CBE /* Assets.xcassets in Resources */,
 				6B60CE241DE055370093F5FD /* readme.txt in Resources */,
+				6B60CE271DE05B7C0093F5FD /* Pitcur.dat in Resources */,
+				6B60CE281DE05B7C0093F5FD /* Pitcur.xml in Resources */,
 				927B76F91D28070D00C4F5CC /* Tarmac.dat in Resources */,
 				927B76F81D28070D00C4F5CC /* StonesAndChips.xml in Resources */,
 				92AA11851D27B96300E56CBE /* Localizable.strings in Resources */,

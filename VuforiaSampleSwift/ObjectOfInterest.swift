@@ -40,15 +40,14 @@ class ObjectOfIntereset: SCNNode {
     self.geometry = SCNCylinder(radius: CGFloat(Float(75) / scale), height: 0.1)
     self.geometry?.firstMaterial = zoneMaterial
     self.position = vec
-    self.rotation = SCNVector4Make(50/scale, 0, 0, 100)
-    
+    self.rotation = SCNVector4Make(50/scale, 0, 0, 90)
     
     circleBorder.name = pointName
     circleBorder.geometry = SCNTorus(ringRadius:  CGFloat(Float(10.0) / scale),
                                      pipeRadius:  CGFloat(Float(0.1) / scale))
     circleBorder.geometry?.firstMaterial = borderMaterial
     circleBorder.position = SCNVector3Make(0, 0, 0)
-    circleBorder.rotation = SCNVector4Make(50/scale, 0, 0, 100)
+    circleBorder.rotation = SCNVector4Make(50/scale, 0, 0, 90)
     self.addChildNode(circleBorder)
     
     circle.name = pointName
@@ -56,7 +55,7 @@ class ObjectOfIntereset: SCNNode {
                                   height: 2 * CGFloat(Float(0.1) / scale))
     circle.geometry?.firstMaterial = circleMaterial
     circle.position = SCNVector3Make(0, 0, 0)
-    circle.rotation = SCNVector4Make(50/scale, 0, 0, 100)
+    circle.rotation = SCNVector4Make(50/scale, 0, 0, 90)
     self.addChildNode(circle)
   }
   

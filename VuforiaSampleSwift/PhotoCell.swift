@@ -57,8 +57,10 @@ extension PhotoCell: ConfigurableCell {
       let x = annotation.bacis().x
       let y = annotation.bacis().y
 
-      let X = x * littleImageView.frame.size.width * 2.8
-      let Y = (1 - y) * littleImageView.frame.size.height * 2.8
+      let X = x * littleImageView.frame.size.width
+        //* 2.8
+      let Y = (1 - y) * littleImageView.frame.size.height
+        //* 2.8
       
       print("X: \(X)")
       print("Y: \(Y)")

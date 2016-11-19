@@ -42,6 +42,8 @@ class ViewController: UIViewController {
     prepare()
   }
   
+  
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
@@ -53,9 +55,10 @@ class ViewController: UIViewController {
   
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
-    
+    pause()
     do {
       try vuforiaManager?.stop()
+      lastSceneName = ""
     }catch let error {
       print("\(error)")
     }
@@ -383,10 +386,9 @@ extension ViewController: VuforiaEAGLViewSceneSource, VuforiaEAGLViewDelegate {
   
   func vuforiaEAGLView(_ view: VuforiaEAGLView!, didTouchDownNode node: SCNNode!) {
     print("touch down \(node.name)\n")
-    lastSceneName = ""
-    
-    pause()
     if let zoneNode = node as? ObjectOfIntereset {
+      lastSceneName = ""
+      pause()
       let vc = UIStoryboard(name: "Main", bundle: nil)
         .instantiateViewController(withIdentifier: "PictureCardViewController") as! PictureCardViewController
       vc.picture = lastPicture
@@ -394,6 +396,8 @@ extension ViewController: VuforiaEAGLViewSceneSource, VuforiaEAGLViewDelegate {
       present(vc, animated: true, completion: nil)
     } else {
       if let zoneNode = node.parent as? ObjectOfIntereset {
+        lastSceneName = ""
+        pause()
         let vc = UIStoryboard(name: "Main", bundle: nil)
           .instantiateViewController(withIdentifier: "PictureCardViewController") as! PictureCardViewController
         vc.picture = lastPicture

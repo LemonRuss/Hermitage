@@ -27,7 +27,7 @@ extension AnnotationCell: ConfigurableCell {
   func configure(with annotation: AnnotationProtocol) {
     titleLabel.text = annotation.title
     categoryLabel.text = annotation.category
-    descriptionLabel.text = annotation.description
+    descriptionLabel.text = annotation.text
   }
   
 }

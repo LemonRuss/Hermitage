@@ -8,5 +8,7 @@ target 'VuforiaSampleSwift' do
   pod 'TableKit'
   pod 'Alamofire', '~> 4.0'
   pod 'SDWebImage', '~>3.8'
+  pod 'Realm'
+  pod 'RealmSwift'
 
 end

@@ -12,6 +12,6 @@ protocol AnnotationProtocol {
   
   var title: String {get set}
   var category: String {get set}
-  var description: String {get set}
+  var text: String {get set}
 
 }

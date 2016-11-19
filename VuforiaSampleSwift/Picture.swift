@@ -7,27 +7,17 @@
 //
 
 import UIKit
+import RealmSwift
 
-struct Picture: AnnotationProtocol {
+class Picture: Object, AnnotationProtocol {
   
-  var id: String
-  var imageName: String
-  var title: String
-  var category: String
-  var description: String
-  var xMultiplier: CGFloat
-  var yMultiplier: CGFloat
-  var annotations: [Annotation]
-  
-  init(id: String, imageName: String, category: String, title: String, description: String, xMultiplier: CGFloat, yMultiplier: CGFloat, annotations: [Annotation]) {
-    self.id = id
-    self.imageName = imageName
-    self.category = category
-    self.title = title
-    self.description = description
-    self.xMultiplier = xMultiplier
-    self.yMultiplier = yMultiplier
-    self.annotations = annotations
-  }
+  dynamic var id = ""
+  dynamic var imageName = ""
+  dynamic var title = ""
+  dynamic var category = ""
+  dynamic var text = ""
+  dynamic var xMultiplier: CGFloat = 0
+  dynamic var yMultiplier: CGFloat =  0
+  var annotations = List<Annotation>()
 
 }

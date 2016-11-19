@@ -8,11 +8,14 @@
 
 import UIKit
 import TableKit
+import RealmSwift
 
 class PhotoCell: UITableViewCell {
   
   @IBOutlet weak var bigImageView: UIImageView!
   @IBOutlet weak var littleImageView: UIImageView!
+  
+  var annotations = List<Annotation>()
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -41,7 +44,9 @@ extension PhotoCell: ConfigurableCell {
     
     layoutIfNeeded()
     
-    for annotation in picture.annotations {
+    annotations = picture.annotations
+    
+    for (index, annotation) in picture.annotations.enumerated() {
       let x = annotation.xCoord + picture.xMultiplier/2
       let y = annotation.yCoord + picture.yMultiplier/2
 
@@ -55,9 +60,20 @@ extension PhotoCell: ConfigurableCell {
       button.layer.borderColor = UIColor.white.cgColor
       button.layer.borderWidth = 1.0
       button.layer.cornerRadius = button.frame.size.width/2
+      button.tag = index
+      button.addTarget(self, action: #selector(annotationPressed(sender:)), for: .touchUpInside)
+      button.addTarget(self, action: #selector(annotationHighlighted(sender:)), for: .touchDown)
       
       addSubview(button)
-      
     }
+  }
+  
+  func annotationPressed(sender:  UIButton) {
+    sender.alpha = 1.0
+    print(sender.tag)
+  }
+  
+  func annotationHighlighted(sender: UIButton) {
+    sender.alpha = 0.4
   }
 }

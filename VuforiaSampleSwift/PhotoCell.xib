@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="247" id="KGk-i7-Jjw" customClass="PhotoCell" customModule="VuforiaSampleSwift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="247"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="246"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="01" translatesAutoresizingMaskIntoConstraints="NO" id="aIj-5T-qAh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="246.5"/>
+                    </imageView>
+                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mfK-of-GsL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="246.5"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eO8-0U-nMO">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="246.5"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="01" translatesAutoresizingMaskIntoConstraints="NO" id="8Ex-d8-TaY">
+                                    <rect key="frame" x="-266" y="65" width="852" height="116"/>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="8Ex-d8-TaY" firstAttribute="top" secondItem="eO8-0U-nMO" secondAttribute="top" constant="65" id="3AP-5X-LLi"/>
+                                <constraint firstItem="8Ex-d8-TaY" firstAttribute="centerY" secondItem="eO8-0U-nMO" secondAttribute="centerY" id="CHk-4X-RQp"/>
+                                <constraint firstItem="8Ex-d8-TaY" firstAttribute="centerX" secondItem="eO8-0U-nMO" secondAttribute="centerX" id="qXj-Uy-TSZ"/>
+                            </constraints>
+                        </view>
+                        <blurEffect style="light"/>
+                    </visualEffectView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="aIj-5T-qAh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="D6n-HC-Qix"/>
+                    <constraint firstItem="mfK-of-GsL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Ubz-3j-oRA"/>
+                    <constraint firstItem="mfK-of-GsL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="exi-7Y-9ED"/>
+                    <constraint firstAttribute="trailing" secondItem="mfK-of-GsL" secondAttribute="trailing" id="h8b-rd-uTI"/>
+                    <constraint firstAttribute="bottom" secondItem="mfK-of-GsL" secondAttribute="bottom" id="hDB-FZ-AIi"/>
+                    <constraint firstAttribute="bottom" secondItem="aIj-5T-qAh" secondAttribute="bottom" id="lZD-qg-Yqw"/>
+                    <constraint firstAttribute="trailing" secondItem="aIj-5T-qAh" secondAttribute="trailing" id="q3z-v5-i7H"/>
+                    <constraint firstItem="aIj-5T-qAh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="wCr-du-CY8"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bigImageView" destination="aIj-5T-qAh" id="h9d-rA-Rln"/>
+                <outlet property="littleImageView" destination="8Ex-d8-TaY" id="EEq-BR-Aaa"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="155.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="01" width="852" height="1024"/>
+    </resources>
+</document>

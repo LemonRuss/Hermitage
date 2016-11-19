@@ -8,14 +8,20 @@
 
 import UIKit
 
-struct Annotation {
+struct Annotation: AnnotationProtocol {
   
   var title: String
+  var category: String
   var description: String
+  var xCoord: CGFloat
+  var yCoord: CGFloat
   
-  init(title: String, description: String) {
+  init(title: String, category: String, description: String, xCoord: CGFloat, yCoord: CGFloat) {
     self.title = title
+    self.category = category
     self.description = description
+    self.xCoord = xCoord
+    self.yCoord = yCoord
   }
 
 }

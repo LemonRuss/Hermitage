@@ -28,7 +28,7 @@ class ViewController: UIViewController {
   deinit {
     NotificationCenter.default.removeObserver(self)
   }
-  
+    
   override func viewDidLoad() {
     super.viewDidLoad()
     setupNavigationController()

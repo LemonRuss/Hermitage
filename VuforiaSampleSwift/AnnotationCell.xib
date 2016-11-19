@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="271" id="KGk-i7-Jjw" customClass="AnnotationCell" customModule="VuforiaSampleSwift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="271"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="270"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AMERICAL GOTHIC" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eer-hx-J9D">
+                        <rect key="frame" x="16" y="22" width="280" height="29"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GRANT DEVOLSON WOOD" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8f3-4g-9Cx">
+                        <rect key="frame" x="16" y="56" width="280" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGr-4g-BhT">
+                        <rect key="frame" x="16" y="88" width="280" height="172"/>
+                        <string key="text">Wood’s inspiration came from what is now known as the American Gothic House, and his decision to paint the house along with «the kind of people I fancied should live in that house.» Painted in 1930, it depicts a farmer standing beside a woman that has been interpreted to be either his wife or his daughter.</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="rGr-4g-BhT" firstAttribute="trailing" secondItem="8f3-4g-9Cx" secondAttribute="trailing" id="0Ws-Wy-pAH"/>
+                    <constraint firstItem="eer-hx-J9D" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="1c6-bd-mce"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="eer-hx-J9D" secondAttribute="trailing" constant="16" id="3YA-ty-YXj"/>
+                    <constraint firstItem="8f3-4g-9Cx" firstAttribute="top" secondItem="eer-hx-J9D" secondAttribute="bottom" constant="5" id="Dxi-P6-OgO"/>
+                    <constraint firstItem="8f3-4g-9Cx" firstAttribute="leading" secondItem="eer-hx-J9D" secondAttribute="leading" id="ESX-8z-B1u"/>
+                    <constraint firstItem="rGr-4g-BhT" firstAttribute="top" secondItem="8f3-4g-9Cx" secondAttribute="bottom" constant="15" id="a7c-wB-6j1"/>
+                    <constraint firstAttribute="bottom" secondItem="rGr-4g-BhT" secondAttribute="bottom" constant="10" id="eOc-Sg-nuw"/>
+                    <constraint firstItem="8f3-4g-9Cx" firstAttribute="trailing" secondItem="eer-hx-J9D" secondAttribute="trailing" id="pCv-Yc-afg"/>
+                    <constraint firstItem="rGr-4g-BhT" firstAttribute="leading" secondItem="8f3-4g-9Cx" secondAttribute="leading" id="vyh-0T-zJ9"/>
+                    <constraint firstItem="eer-hx-J9D" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="22" id="wYU-dQ-sip"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="categoryLabel" destination="8f3-4g-9Cx" id="4YP-em-yj0"/>
+                <outlet property="descriptionLabel" destination="rGr-4g-BhT" id="pgj-IY-abr"/>
+                <outlet property="titleLabel" destination="eer-hx-J9D" id="Pt4-0U-H2l"/>
+            </connections>
+            <point key="canvasLocation" x="85" y="166.5"/>
+        </tableViewCell>
+    </objects>
+</document>

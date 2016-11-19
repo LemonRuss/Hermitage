@@ -47,6 +47,4 @@ struct AmericanGothic {
       positions.append(annotation)
     }
   }
-  
-
 }

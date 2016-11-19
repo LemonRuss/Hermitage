@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (4.0.1)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - TableKit (2.2.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - SDWebImage (~> 3.8)
+  - TableKit
+
+SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  TableKit: d3f552039edf213ed3517b72449742df04bf281e
+
+PODFILE CHECKSUM: cf3b143dff30bec8b22c4abba12d82062756456c
+
+COCOAPODS: 1.1.0.rc.2

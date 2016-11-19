@@ -18,9 +18,16 @@ class Annotation: Object, AnnotationProtocol {
   dynamic var xCoord: CGFloat = 0
   dynamic var yCoord: CGFloat = 0
   
+  dynamic var xScale: CGFloat = 0
+  dynamic var yScale: CGFloat = 0
+  
   func vector() -> SCNVector3 {
     return SCNVector3Make(Float(xCoord),
                           Float(yCoord), 0)
   }
 
+  
+  func bacis() -> CGPoint {
+    return CGPoint(x: (xCoord + xScale/2) / xScale, y: (yCoord + yScale/2) / yScale)
+  }
 }

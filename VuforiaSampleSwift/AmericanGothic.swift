@@ -42,6 +42,8 @@ struct AmericanGothic {
       annotation.text = "Описание"
       annotation.xCoord = CGFloat(point.x / viewScale)
       annotation.yCoord = CGFloat(point.y / viewScale)
+      annotation.xScale = CGFloat(6)
+      annotation.yScale = CGFloat(7)
       positions.append(annotation)
     }
   }

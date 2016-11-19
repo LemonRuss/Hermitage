@@ -34,9 +34,11 @@
 		92AA11101D27A5EB00E56CBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92AA110F1D27A5EB00E56CBE /* Assets.xcassets */; };
 		92AA11131D27A5EB00E56CBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92AA11111D27A5EB00E56CBE /* LaunchScreen.storyboard */; };
 		92AA11851D27B96300E56CBE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92AA11841D27B96300E56CBE /* Localizable.strings */; };
+		C98EC3DC1EBCC0B0D2AFB2B6 /* Pods_VuforiaSampleSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD43DF1DC41244AFB5F2CC6B /* Pods_VuforiaSampleSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D94D8E6BE863D1FD50B53F0 /* Pods-VuforiaSampleSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VuforiaSampleSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VuforiaSampleSwift/Pods-VuforiaSampleSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		6B60CD531DE054780093F5FD /* libVuforia.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libVuforia.a; path = "VuforiaSampleSwift/vuforia-sdk-ios-6-1-17/build/lib/arm/libVuforia.a"; sourceTree = "<group>"; };
 		6B60CDBF1DE055370093F5FD /* frame-markers-transparent.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "frame-markers-transparent.zip"; sourceTree = "<group>"; };
 		6B60CDC31DE055370093F5FD /* Area.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Area.h; sourceTree = "<group>"; };
@@ -160,6 +162,8 @@
 		92AA11141D27A5EB00E56CBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92AA11801D27A6CD00E56CBE /* VuforiaSampleSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VuforiaSampleSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		92AA11841D27B96300E56CBE /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		AD43DF1DC41244AFB5F2CC6B /* Pods_VuforiaSampleSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VuforiaSampleSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1B0046BAABDF23D22F7A1EC /* Pods-VuforiaSampleSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VuforiaSampleSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-VuforiaSampleSwift/Pods-VuforiaSampleSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,16 +181,27 @@
 				927B76DC1D27FDE500C4F5CC /* SystemConfiguration.framework in Frameworks */,
 				927B76D71D27FDC600C4F5CC /* AVFoundation.framework in Frameworks */,
 				927B76D81D27FDC600C4F5CC /* CoreMotion.framework in Frameworks */,
+				C98EC3DC1EBCC0B0D2AFB2B6 /* Pods_VuforiaSampleSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38DF4D9DDA756CE2A0BCFE88 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5D94D8E6BE863D1FD50B53F0 /* Pods-VuforiaSampleSwift.debug.xcconfig */,
+				C1B0046BAABDF23D22F7A1EC /* Pods-VuforiaSampleSwift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6B60CD521DE054780093F5FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				6B60CD531DE054780093F5FD /* libVuforia.a */,
+				AD43DF1DC41244AFB5F2CC6B /* Pods_VuforiaSampleSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -403,6 +418,7 @@
 				92AA11071D27A5EB00E56CBE /* VuforiaSampleSwift */,
 				92AA11061D27A5EB00E56CBE /* Products */,
 				6B60CD521DE054780093F5FD /* Frameworks */,
+				38DF4D9DDA756CE2A0BCFE88 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -440,9 +456,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92AA11171D27A5EB00E56CBE /* Build configuration list for PBXNativeTarget "VuforiaSampleSwift" */;
 			buildPhases = (
+				C9DA3020B6BC49EF27554E99 /* [CP] Check Pods Manifest.lock */,
 				92AA11011D27A5EB00E56CBE /* Sources */,
 				92AA11021D27A5EB00E56CBE /* Frameworks */,
 				92AA11031D27A5EB00E56CBE /* Resources */,
+				764FDB1CCF406A8649D30FDE /* [CP] Embed Pods Frameworks */,
+				2FDEFE99B22AF26F9A7885B9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -509,6 +528,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2FDEFE99B22AF26F9A7885B9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VuforiaSampleSwift/Pods-VuforiaSampleSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		764FDB1CCF406A8649D30FDE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VuforiaSampleSwift/Pods-VuforiaSampleSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9DA3020B6BC49EF27554E99 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		92AA11011D27A5EB00E56CBE /* Sources */ = {
@@ -638,6 +705,7 @@
 		};
 		92AA11181D27A5EB00E56CBE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D94D8E6BE863D1FD50B53F0 /* Pods-VuforiaSampleSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -662,6 +730,7 @@
 		};
 		92AA11191D27A5EB00E56CBE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1B0046BAABDF23D22F7A1EC /* Pods-VuforiaSampleSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

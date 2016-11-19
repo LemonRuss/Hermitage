@@ -19,5 +19,9 @@ class Picture: Object, AnnotationProtocol {
   dynamic var xMultiplier: CGFloat = 0
   dynamic var yMultiplier: CGFloat =  0
   var annotations = List<Annotation>()
+  
+  override static func primaryKey() -> String? {
+    return "id"
+  }
 
 }

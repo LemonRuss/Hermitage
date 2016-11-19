@@ -48,7 +48,7 @@ extension PhotoCell: ConfigurableCell {
     
     for (index, annotation) in picture.annotations.enumerated() {
       let x = annotation.xCoord + picture.xMultiplier/2
-      let y = annotation.yCoord + picture.yMultiplier/2
+      let y = annotation.yCoord - picture.yMultiplier/2
 
       let X = x * littleImageView.frame.size.width/picture.xMultiplier
       let Y = y * littleImageView.frame.size.height/picture.yMultiplier

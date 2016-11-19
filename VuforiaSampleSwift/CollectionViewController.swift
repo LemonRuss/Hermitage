@@ -7,18 +7,52 @@
 //
 
 import UIKit
+import RealmSwift
 
-class CollectionViewController: UITableViewCell {
+class CollectionViewController: UIViewController {
+  
+  @IBOutlet weak var collectionView: UICollectionView!
+  
+  var pictures = [Picture]()
+  
+  override func viewDidLoad() {
+    super.awakeFromNib()
+    setupNavigationController()
+    setupBackButton()
+    
+    let realm = try! Realm()
+    let objects = realm.objects(Picture.self)
+    pictures = Array(objects)
+  }
+}
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+  
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return pictures.count
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PictureCell", for: indexPath as IndexPath) as! PictureCell
+    cell.imageView.image = UIImage(named: pictures[indexPath.row].imageName)
+    return cell
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    print("You selected cell #\(indexPath.item)!")
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    return CGSize(width: collectionView.frame.size.width/2, height: collectionView.frame.size.width/2)
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    return 0
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    return 0
+  }
+  
 }

@@ -27,29 +27,30 @@ class PictureCardViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-//    let annotation = Annotation()
-//    annotation.title = "Title"
-//    annotation.category = "Categoty"
-//    annotation.text = "Text"
-//    annotation.xCoord = -1.8
-//    annotation.yCoord = 1.4
-//    
-//    let picture = Picture()
-//    picture.id = "1"
-//    picture.imageName = "01"
-//    picture.category = "Picture category"
-//    picture.title = "Picture title"
-//    picture.text = "Picture text"
-//    picture.xMultiplier = 6.0
-//    picture.yMultiplier = 7.0
-//    picture.annotations.append(annotation)
-    
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
     if let picture = picture {
       show(picture: picture)
     }
   }
 
+  @IBAction func exitPressed(_ sender: UIButton) {
+    dismiss(animated: true, completion: nil)
+  }
+  
+  @IBAction func addToCollectionPressed(_ sender: UIButton) {
+    guard let picture = picture else {
+      return
+    }
+    
+    let realm = try! Realm()
+    try! realm.write {
+      realm.add(picture,update: true)
+    }
+  }
+  
   func show(picture: Picture) {
     var rows = [Row]()
     rows.append(TableRow<PhotoCell>(item: picture))

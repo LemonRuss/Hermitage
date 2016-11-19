@@ -18,6 +18,7 @@ class PhotoCell: UITableViewCell {
   @IBOutlet weak var littleImageView: UIImageView!
   
   var annotations = List<Annotation>()
+  var buttons = [UIButton]()
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -50,6 +51,8 @@ extension PhotoCell: ConfigurableCell {
     
     littleImageView.isUserInteractionEnabled = true
     
+    buttons.removeAll()
+    
     for (index, annotation) in picture.annotations.enumerated() {
       let x = annotation.bacis().x
       let y = annotation.bacis().y
@@ -76,13 +79,19 @@ extension PhotoCell: ConfigurableCell {
       button.isUserInteractionEnabled = true
       
       littleImageView.addSubview(button)
+      buttons.append(button)
     }
   }
   
   func annotationPressed(sender:  UIButton) {
+    
+    for button in buttons {
+      button.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+    }
+    
     sender.alpha = 1.0
     TableCellAction(key: Actions.AnnotationPressed, sender: self, userInfo: ["index": sender.tag]).invoke()
-    print(sender.tag)
+    sender.backgroundColor = UIColor(red: 162/255, green: 38/255, blue: 76/255, alpha: 1.0)
   }
   
   func annotationHighlighted(sender: UIButton) {

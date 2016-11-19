@@ -84,9 +84,14 @@ extension PhotoCell: ConfigurableCell {
   }
   
   func annotationPressed(sender:  UIButton) {
+    
+    for button in buttons {
+      button.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+    }
+    
     sender.alpha = 1.0
     TableCellAction(key: Actions.AnnotationPressed, sender: self, userInfo: ["index": sender.tag]).invoke()
-    print(sender.tag)
+    sender.backgroundColor = UIColor(red: 162/255, green: 38/255, blue: 76/255, alpha: 1.0)
   }
   
   func annotationHighlighted(sender: UIButton) {

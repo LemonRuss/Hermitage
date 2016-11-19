@@ -202,7 +202,7 @@ extension ViewController: VuforiaEAGLViewSceneSource, VuforiaEAGLViewDelegate {
     
     lastPicture = Picture()
     lastPicture!.id = "0"
-    lastPicture!.imageName = "01"
+    lastPicture!.imageName = "00"
     lastPicture!.category = ""
     lastPicture!.title = ""
     lastPicture!.text = ""

@@ -16,12 +16,18 @@ struct Annotation: AnnotationProtocol {
   var xCoord: CGFloat
   var yCoord: CGFloat
   
-  init(title: String, category: String, description: String, xCoord: CGFloat, yCoord: CGFloat) {
+  init(title: String, category: String, description: String, xCoord: Float, yCoord: Float) {
     self.title = title
     self.category = category
     self.description = description
-    self.xCoord = xCoord
-    self.yCoord = yCoord
+    self.xCoord = CGFloat(xCoord)
+    self.yCoord = CGFloat(yCoord)
+  }
+  
+  
+  func vector() -> SCNVector3 {
+    return SCNVector3Make(Float(xCoord),
+                          Float(yCoord), 0)
   }
 
 }

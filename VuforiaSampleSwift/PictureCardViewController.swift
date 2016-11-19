@@ -21,6 +21,7 @@ class PictureCardViewController: UIViewController {
   
   var selectedAnnotation: Annotation?
   
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     

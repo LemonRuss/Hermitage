@@ -40,7 +40,7 @@ class ObjectOfIntereset: SCNNode {
     self.geometry = SCNCylinder(radius: CGFloat(Float(75) / scale), height: 0.1)
     self.geometry?.firstMaterial = zoneMaterial
     self.position = vec
-    self.rotation = SCNVector4Make(25/scale, 0, 0, 100)
+    self.rotation = SCNVector4Make(50/scale, 0, 0, 100)
     
     
     circleBorder.name = pointName

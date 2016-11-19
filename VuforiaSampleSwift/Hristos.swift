@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-struct Madonna {
+struct Hristos {
   
   typealias SCNPoint = (x: Float, y: Float)
   

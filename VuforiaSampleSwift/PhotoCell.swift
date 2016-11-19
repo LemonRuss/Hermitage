@@ -3,7 +3,6 @@
 //  VuforiaSampleSwift
 //
 //  Created by Artur Guseinov on 19/11/16.
-//  Copyright © 2016 Yoshihiro Kato. All rights reserved.
 //
 
 import UIKit
@@ -47,15 +46,19 @@ extension PhotoCell: ConfigurableCell {
     annotations = picture.annotations
     
     for (index, annotation) in picture.annotations.enumerated() {
-      let x = annotation.xCoord + picture.xMultiplier/2
-      let y = annotation.yCoord + picture.yMultiplier/2
+      let x = annotation.bacis().x
+      let y = annotation.bacis().y
 
-      let X = x * littleImageView.frame.size.width/picture.xMultiplier
-      let Y = y * littleImageView.frame.size.height/picture.yMultiplier
+      let X = x * littleImageView.frame.size.width * 2.8
+      let Y = (1 - y) * littleImageView.frame.size.height * 2.8
+      
+      print("X: \(X)")
+      print("Y: \(Y)")
       
       let button = UIButton(type: .system)
-      button.frame = CGRect(x: 0 + X, y: 0, width: 44.0, height: 44.0)
-      button.center = CGPoint(x: littleImageView.frame.origin.x + X, y: littleImageView.frame.origin.y + Y)
+      button.frame = CGRect(x: 0, y: 0, width: 44.0, height: 44.0)
+      button.center = CGPoint(x:  X,
+                              y:  Y)
       button.backgroundColor = UIColor.white.withAlphaComponent(0.5)
       button.layer.borderColor = UIColor.white.cgColor
       button.layer.borderWidth = 1.0
@@ -64,7 +67,7 @@ extension PhotoCell: ConfigurableCell {
       button.addTarget(self, action: #selector(annotationPressed(sender:)), for: .touchUpInside)
       button.addTarget(self, action: #selector(annotationHighlighted(sender:)), for: .touchDown)
       
-      addSubview(button)
+      littleImageView.addSubview(button)
     }
   }
   

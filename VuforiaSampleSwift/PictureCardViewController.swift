@@ -45,11 +45,15 @@ class PictureCardViewController: UIViewController {
 //    picture.yMultiplier = 7.0
 //    picture.annotations.append(annotation)
     
+
+  }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
     if let picture = picture {
       show(picture: picture)
     }
   }
-
   func show(picture: Picture) {
     var rows = [Row]()
     rows.append(TableRow<PhotoCell>(item: picture))

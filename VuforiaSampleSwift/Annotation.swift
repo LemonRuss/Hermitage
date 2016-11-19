@@ -17,5 +17,10 @@ class Annotation: Object, AnnotationProtocol {
   dynamic var text = ""
   dynamic var xCoord: CGFloat = 0
   dynamic var yCoord: CGFloat = 0
+  
+  func vector() -> SCNVector3 {
+    return SCNVector3Make(Float(xCoord),
+                          Float(yCoord), 0)
+  }
 
 }

@@ -26,6 +26,9 @@ class ViewController: UIViewController {
   
   fileprivate var lastPicture: Picture?
   
+  
+  var button: UIButton?
+  
   deinit {
     NotificationCenter.default.removeObserver(self)
   }
@@ -59,6 +62,7 @@ class ViewController: UIViewController {
     do {
       try vuforiaManager?.stop()
       lastSceneName = ""
+      removeButton()
     }catch let error {
       print("\(error)")
     }
@@ -84,6 +88,46 @@ private extension ViewController {
                                    name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
     
     vuforiaManager?.prepare(with: .portrait)
+    
+    
+
+  }
+  
+  func putButton() {
+    let height = UIScreen.main.bounds.height
+    let width = UIScreen.main.bounds.width
+    
+
+    button = UIButton(frame: CGRect(x: 0, y: height - 100, width: width, height: 50))
+    
+
+    button?.setTitle("Подробнее", for: .normal)
+    
+    button?.backgroundColor = UIColor(red: 162.0/255.0, green: 38.0/255.0,
+                                     blue: 76.0/255.0, alpha: 1)
+    
+    button?.addTarget(self, action: #selector(openPicture), for: .touchUpInside)
+    
+    guard let button = button else {
+      return
+    }
+    view.addSubview(button)
+  }
+  
+  @objc func openPicture() {
+    lastSceneName = ""
+    pause()
+    let vc = UIStoryboard(name: "Main", bundle: nil)
+      .instantiateViewController(withIdentifier: "PictureCardViewController") as! PictureCardViewController
+    vc.picture = lastPicture
+    present(vc, animated: true, completion: nil)
+  }
+  
+  func removeButton() {
+    guard let button = button else {
+      return
+    }
+    button.removeFromSuperview()
   }
   
   func pause() {
@@ -133,6 +177,7 @@ extension ViewController: VuforiaManagerDelegate {
     for index in 0 ..< state.numberOfTrackableResults {
       let result = state.trackableResult(at: index)
       let trackerableName = result?.trackable.name
+      putButton()
       if trackerableName == "Starry" {
         if lastSceneName != "Starry" {
           manager.eaglView.setNeedsChangeSceneWithUserInfo(["scene" : "Starry"])

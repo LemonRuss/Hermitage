@@ -18,6 +18,7 @@ class PhotoCell: UITableViewCell {
   @IBOutlet weak var littleImageView: UIImageView!
   
   var annotations = List<Annotation>()
+  var buttons = [UIButton]()
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -50,6 +51,8 @@ extension PhotoCell: ConfigurableCell {
     
     littleImageView.isUserInteractionEnabled = true
     
+    buttons.removeAll()
+    
     for (index, annotation) in picture.annotations.enumerated() {
       let x = annotation.bacis().x
       let y = annotation.bacis().y
@@ -74,6 +77,7 @@ extension PhotoCell: ConfigurableCell {
       button.isUserInteractionEnabled = true
       
       littleImageView.addSubview(button)
+      buttons.append(button)
     }
   }
   
